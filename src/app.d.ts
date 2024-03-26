@@ -11,3 +11,15 @@ declare global {
 }
 
 export {};
+
+interface User {
+	id: string;
+	name: string;
+	team_id: string;
+	team_name: string;
+	github: string;
+	points: number;
+	sessionOrgId: string | null;
+}
+
+export { User };
