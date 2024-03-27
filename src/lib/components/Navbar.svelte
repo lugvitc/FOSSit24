@@ -50,8 +50,8 @@
 	</div>
 	<div class="hidden items-center space-x-4 xl:flex">
 		{#if $user.id}
-			<a href="{base}/">Welcome</a>
-			<a href="{base}/">{$user}</a>
+			<Button href="{base}/">Logout</Button>
+			<Button href="{base}/" primary>{$user.name}</Button>
 		{:else}
 			<Button href="{base}/">Login</Button>
 			<Button href="{base}/" primary>Signup</Button>
