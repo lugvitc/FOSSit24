@@ -12,6 +12,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
+			// assets: "https://kreativethinker.github.io/FOSSit24",
 			// This is in needed in the case where Github pages is not hosted on the root level
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		}
