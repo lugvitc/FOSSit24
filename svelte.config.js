@@ -8,7 +8,9 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			fallback: '404.html'
+		}),
 		paths: {
 			// This is in needed in the case where Github pages is not hosted on the root level
 			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
