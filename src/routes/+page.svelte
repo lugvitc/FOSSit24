@@ -6,16 +6,16 @@
 </script>
 
 <Section>
-	<div class="relative mb-12 flex items-center">
+	<img
+		src="assets/Asset 4.png"
+		class="absolute right-[-50%] top-[-50%] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
+	/>
+	<div class="relative mb-12 flex flex-col space-y-8 xl:flex-row xl:items-center">
 		<h1>FOSSit ‘24</h1>
-		<img src="{base}/logo.png" class="mx-16 h-32" />
-		<img
-			src="assets/Asset 4.png"
-			class="absolute right-[-600px] top-[-400px] z-[-100] w-[1280px] rotate-[128deg]"
-		/>
+		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-16 xl:h-32 xl:w-32" />
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
-	<div class="flex space-x-8">
+	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<Button href="{base}/" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
@@ -38,7 +38,7 @@
 		class="absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
 	/>
 	<Glass>
-		<div class="absolute bottom-0 right-[-100px] h-[300px] w-[600px] rounded-tl-3xl bg-white"></div>
+		<div class="absolute bottom-0 bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
 		<div class="mb-24 max-w-2xl">
 			<h4 class="text-foreground">Contribute to real projects</h4>
 			<h4>Embark your journey by contributing to projects built by the linux club</h4>
@@ -48,13 +48,13 @@
 	<div class="mt-4 flex space-x-4">
 		<Glass>
 			<h4>
-				<n class="text-3xl text-white">Compete</n>
+				<h4 class="inline text-white">Compete</h4>
 				in mini contests win various goodies.
 			</h4>
 		</Glass>
 		<Glass>
 			<h4>
-				<n class="text-3xl text-white">Implement</n>
+				<h4 class="inline text-white">Implement</h4>
 				ideas made by you.
 			</h4>
 		</Glass>
@@ -62,17 +62,142 @@
 </Section>
 
 <Section>
+	<img src="{base}/assets/Asset 2.png" class="absolute right-[-50%] z-[-100]" alt="Gradient" />
+	<h2
+		style="text-shadow: 0px 4px 84.0999984741211px 0px rgba(255, 255, 255, 0.85);"
+		class="bg-transparent"
+	>
+		The Timeline
+	</h2>
+	<div class="flex">
+		<div class="ml-8 h-full xl:ml-24">
+			<svg
+				width="10"
+				height="1024"
+				viewBox="0 0 10 1590"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M5 5L5.00007 1585"
+					stroke="url(#paint0_linear_5_94)"
+					stroke-width="20"
+					stroke-linecap="round"
+				/>
+				<defs>
+					<linearGradient
+						id="paint0_linear_5_94"
+						x1="4.5"
+						y1="5"
+						x2="4.50007"
+						y2="1585"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="white" stop-opacity="0" />
+						<stop offset="0.25" stop-color="white" />
+						<stop offset="0.714651" stop-color="white" />
+						<stop offset="1" stop-color="#999999" stop-opacity="0" />
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+		<div class="mt-24">
+			<div>
+				<h4 class="mb-12 ml-24 font-bold">15th April</h4>
+				<div class="mb-12 flex">
+					<svg
+						width="95"
+						height="28"
+						viewBox="0 0 95 28"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
+							fill="white"
+						/>
+					</svg>
+					<p class="ml-4">
+						Workshop, Mini Contest, Ideation Round<br />9:00am to 12:00pm
+					</p>
+				</div>
+				<div class="mb-12 flex">
+					<svg
+						width="95"
+						height="28"
+						viewBox="0 0 95 28"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
+							fill="white"
+						/>
+					</svg>
+					<p class="ml-4">
+						Round One<br />
+						2:00pm to 6:00pm
+					</p>
+				</div>
+
+				<div class="mb-12 flex">
+					<svg
+						width="95"
+						height="28"
+						viewBox="0 0 95 28"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
+							fill="white"
+						/>
+					</svg>
+					<p class="ml-4">
+						Round 2 Starts
+						<br />
+						8:00pm
+					</p>
+				</div>
+			</div>
+
+			<div>
+				<h4 class="mb-12 ml-24 font-bold">16th April</h4>
+				<div class="mb-12 flex">
+					<svg
+						width="95"
+						height="28"
+						viewBox="0 0 95 28"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
+							fill="white"
+						/>
+					</svg>
+					<p class="ml-4">
+						Round 2 Ends<br />8:00am
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</Section>
+
+<Section>
 	<img
 		src="{base}/assets/Asset 1.png"
-		class="absolute bottom-[-950px] left-1/2 z-[-100] w-[1150px] translate-x-[-50%] rotate-[50deg]"
+		class="absolute left-1/2 top-[-10%] z-[-100] w-full max-w-lg translate-x-[-50%] rotate-[50deg]"
+		alt="Gradient"
 	/>
 	<div
-		class="absolute bottom-[-950px] left-1/2 z-[-100] h-[1150px] w-[1150px] translate-x-[-50%] bg-gradient-to-b from-transparent to-black to-70%"
+		class="absolute left-1/2 top-[-10%] z-[-100] aspect-square w-full translate-x-[-50%] bg-gradient-to-b from-transparent to-black to-70%"
 	></div>
 	<div class="relative mb-12 flex items-center">
 		<h1>Get started now.</h1>
 	</div>
-	<div class="flex space-x-8">
+	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<Button href="{base}/" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
