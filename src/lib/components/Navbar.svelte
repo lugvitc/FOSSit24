@@ -31,7 +31,7 @@
 	});
 </script>
 
-<div class="relative m-auto mt-12 flex w-full max-w-6xl justify-between px-8">
+<div class="relative m-auto mt-12 flex w-full max-w-6xl justify-between px-8 xl:px-0">
 	<img
 		src="{base}/assets/Asset 2.png"
 		class="absolute left-[-700px] top-[-700px] z-[-100] h-[1000px] w-[1000px]"
