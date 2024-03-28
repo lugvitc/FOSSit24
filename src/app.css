@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 h1 {
-	@apply text-7xl xl:text-9xl font-bold translate-y-4;
+	@apply text-7xl font-bold translate-y-4;
 }
 
 h2 {
-	@apply text-5xl xl:text-6xl font-bold;
+	@apply text-4xl font-bold;
 }
 
 h3 {
-	@apply text-3xl xl:text-4xl mb-6;
+	@apply text-2xl mb-6;
 }
 
 h4 {
-	@apply text-2xl xl:text-3xl leading-[2.5rem];
+	@apply text-xl leading-[2.5rem];
 }
 
 p {
-	@apply text-2xl text-zinc-400;
+	@apply text-lg text-zinc-400;
 }
 
 * {
-	@apply text-xl;
+	@apply text-lg;
 }
 
 /* Robit Bold */

@@ -5,14 +5,18 @@
 	import { base } from '$app/paths';
 </script>
 
+<svelte:head>
+	<title>FOSSit '24</title>
+</svelte:head>
+
 <Section>
 	<img
 		src="assets/Asset 4.png"
 		class="absolute right-[-50%] top-[-50%] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
 	/>
-	<div class="relative mb-12 flex flex-col space-y-8 xl:flex-row xl:items-center">
+	<div class="relative mb-8 flex flex-col space-y-8 xl:flex-row xl:items-center">
 		<h1>FOSSit ‘24</h1>
-		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-16 xl:h-32 xl:w-32" />
+		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-8" />
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
@@ -45,7 +49,7 @@
 		</div>
 		<a class="font-bold text-foreground" href="{base}/">Take a peek -</a>
 	</Glass>
-	<div class="mt-4 flex space-x-4">
+	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
 			<h4>
 				<h4 class="inline text-white">Compete</h4>
@@ -105,55 +109,37 @@
 			<div>
 				<h4 class="mb-12 ml-24 font-bold">15th April</h4>
 				<div class="mb-12 flex">
-					<svg
-						width="95"
-						height="28"
-						viewBox="0 0 95 28"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
+					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
 							fill="white"
 						/>
 					</svg>
-					<p class="ml-4">
+					<p>
 						Workshop, Mini Contest, Ideation Round<br />9:00am to 12:00pm
 					</p>
 				</div>
 				<div class="mb-12 flex">
-					<svg
-						width="95"
-						height="28"
-						viewBox="0 0 95 28"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
+					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
 							fill="white"
 						/>
 					</svg>
-					<p class="ml-4">
+					<p>
 						Round One<br />
 						2:00pm to 6:00pm
 					</p>
 				</div>
 
 				<div class="mb-12 flex">
-					<svg
-						width="95"
-						height="28"
-						viewBox="0 0 95 28"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
+					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
 							fill="white"
 						/>
 					</svg>
-					<p class="ml-4">
+					<p>
 						Round 2 Starts
 						<br />
 						8:00pm
@@ -164,19 +150,13 @@
 			<div>
 				<h4 class="mb-12 ml-24 font-bold">16th April</h4>
 				<div class="mb-12 flex">
-					<svg
-						width="95"
-						height="28"
-						viewBox="0 0 95 28"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
+					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
 							fill="white"
 						/>
 					</svg>
-					<p class="ml-4">
+					<p>
 						Round 2 Ends<br />8:00am
 					</p>
 				</div>
