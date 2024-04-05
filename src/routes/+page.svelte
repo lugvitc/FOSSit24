@@ -42,7 +42,7 @@
 		class="absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
 	/>
 	<Glass>
-		<div class="absolute bottom-0 bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
+		<div class="absolute bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
 		<div class="mb-24 max-w-2xl">
 			<h4 class="text-foreground">Contribute to real projects</h4>
 			<h4>Embark your journey by contributing to projects built by the linux club</h4>
@@ -52,13 +52,13 @@
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
 			<h4>
-				<h4 class="inline text-white">Compete</h4>
+				<dummy class="h4 inline text-white">Compete</dummy>
 				in mini contests win various goodies.
 			</h4>
 		</Glass>
 		<Glass>
 			<h4>
-				<h4 class="inline text-white">Implement</h4>
+				<dummy class="h4 inline text-white">Implement</dummy>
 				ideas made by you.
 			</h4>
 		</Glass>
@@ -67,10 +67,7 @@
 
 <Section>
 	<img src="{base}/assets/Asset 2.png" class="absolute right-[-50%] z-[-100]" alt="Gradient" />
-	<h2
-		style="text-shadow: 0px 4px 84.0999984741211px 0px rgba(255, 255, 255, 0.85);"
-		class="bg-transparent"
-	>
+	<h2 style="text-shadow: 0px 4px 84px 0px rgba(255, 255, 255, 0.85);" class="bg-transparent">
 		The Timeline
 	</h2>
 	<div class="flex">
