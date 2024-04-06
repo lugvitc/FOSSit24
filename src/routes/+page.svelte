@@ -22,7 +22,7 @@
 		<img
 			src="{base}/logo.png"
 			class="h-20 w-20
-      -translate-y-4 xl:mx-8"
+      -translate-y-3 xl:mx-8"
 			alt="FOSSit Logo"
 		/>
 	</div>
