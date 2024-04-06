@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 h1 {
-	@apply text-7xl font-bold translate-y-4;
+	@apply translate-y-4 text-8xl font-bold;
 }
 
 h2 {
-	@apply text-4xl font-bold;
+	@apply text-5xl font-bold;
 }
 
 h3 {
-	@apply text-2xl mb-6;
+	@apply mb-6 text-3xl;
 }
 
 h4,
 .h4 {
-	@apply text-xl leading-[2.5rem];
+	@apply text-2xl leading-[2.5rem];
 }
 
 p {
-	@apply text-lg text-zinc-400;
+	@apply text-xl text-zinc-400;
 }
 
 .gradient {
-	@apply max-w-[unset] blur-sm xl:blur-0 brightness-[0.7] xl:brightness-100;
+	@apply max-w-[unset] blur-sm brightness-[0.7] xl:blur-0 xl:brightness-100;
 }
 
 * {
