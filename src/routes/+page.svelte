@@ -14,7 +14,7 @@
 <Section>
 	<img
 		src="assets/Asset 4.png"
-		class="gradient absolute right-[-512px] top-[-256px] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
+		class="gradient absolute right-[-512px] top-[-256px] -z-10 h-[1024px] w-[1024px] rotate-[128deg]"
 		alt="Gradient"
 	/>
 	<div class="relative mb-8 flex flex-col space-y-8 xl:flex-row xl:items-center">
@@ -28,7 +28,7 @@
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/" primary>Get started</Button>
+		<Button href="{base}/register" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
 </Section>
@@ -47,7 +47,7 @@
 <Section>
 	<img
 		src="{base}/assets/Asset 3.png"
-		class="gradient absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
+		class="gradient absolute left-1/2 top-1/2 -z-10 h-screen translate-x-[-50%] translate-y-[-50%]"
 		alt="Gradient"
 	/>
 	<Glass>
@@ -96,7 +96,7 @@
 <Section>
 	<img
 		src="{base}/assets/Asset 2.png"
-		class="gradient absolute right-[-512px] top-0 z-[-100] h-[1024px] w-[1024px]"
+		class="gradient absolute right-[-512px] top-0 -z-10 h-[1024px] w-[1024px]"
 		alt="Gradient"
 	/>
 	<h2 style="text-shadow: 0px 4px 84px 0px rgba(255, 255, 255, 0.85);" class="bg-transparent">
@@ -195,10 +195,10 @@
 </Section>
 
 <Section>
-	<div class="absolute left-0 top-[-3rem] box-content h-[0px] w-full overflow-clip pb-[70vh]">
+	<div class="absolute left-0 top-[-3rem] -z-10 box-content h-[0px] w-full overflow-clip pb-[70vh]">
 		<img
 			src="{base}/assets/Asset 1.png"
-			class="gradient absolute left-1/2 top-0 z-[-100] w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
+			class="gradient absolute left-1/2 top-0 -z-10 w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
 			alt="Gradient"
 		/>
 	</div>
@@ -206,7 +206,7 @@
 		<h1>Get started now.</h1>
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/" primary>Get started</Button>
+		<Button href="{base}/register" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
 </Section>

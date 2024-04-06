@@ -41,7 +41,7 @@
 	<div class="absolute left-0 top-0 w-full overflow-x-clip">
 		<img
 			src="{base}/assets/Asset 2.png"
-			class="gradient absolute left-[-500px] top-[-700px] z-[-100] h-[1000px] w-[1000px] rotate-[180deg]"
+			class="gradient absolute left-[-500px] top-[-700px] -z-10 h-[1000px] w-[1000px] rotate-[180deg]"
 			alt="Gradient background"
 		/>
 	</div>
