@@ -10,7 +10,7 @@
 
 <Section>
 	<!-- Bad practice -->
-	<img src="{base}/logo.png" class="m-auto h-24 w-24 translate-y-[-40px]" alt="FOSSit Logo" />
+	<img src="{base}/logo.png" class="m-auto mb-12 h-24 w-24" alt="FOSSit Logo" />
 	<h1 class="mb-16 text-center text-4xl xl:text-7xl">Register for FOSSit ‘24</h1>
 	<div
 		class="absolute left-0 top-0 z-[-100] box-content h-full w-full overflow-clip xl:top-[-12rem] xl:pb-[calc(100vh-693px)]"
