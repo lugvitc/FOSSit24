@@ -1,5 +1,5 @@
 <div
-	class="glass relative w-full overflow-hidden rounded-3xl border-[1px] border-zinc-500 px-6 py-6 text-zinc-400 xl:px-12 xl:py-16"
+	class="glass relative w-full overflow-hidden rounded-3xl border-[1px] border-zinc-500 px-6 py-12 text-zinc-400 backdrop-blur-xl xl:px-12 xl:py-16"
 >
 	<slot />
 </div>
