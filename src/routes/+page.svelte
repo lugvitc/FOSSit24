@@ -12,11 +12,12 @@
 <Section>
 	<img
 		src="assets/Asset 4.png"
-		class="absolute right-[-50%] top-[-50%] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
+		class="gradient absolute right-[-512px] top-[-256px] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
+		alt="Gradient"
 	/>
 	<div class="relative mb-8 flex flex-col space-y-8 xl:flex-row xl:items-center">
 		<h1>FOSSit ‘24</h1>
-		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-8" />
+		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-8" alt="FOSSit Logo" />
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
@@ -39,7 +40,8 @@
 <Section>
 	<img
 		src="{base}/assets/Asset 3.png"
-		class="absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
+		class="gradient absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
+		alt="Gradient"
 	/>
 	<Glass>
 		<div class="absolute bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
@@ -66,7 +68,11 @@
 </Section>
 
 <Section>
-	<img src="{base}/assets/Asset 2.png" class="absolute right-[-50%] z-[-100]" alt="Gradient" />
+	<img
+		src="{base}/assets/Asset 2.png"
+		class="gradient absolute right-[-512px] top-0 z-[-100] h-[1024px] w-[1024px]"
+		alt="Gradient"
+	/>
 	<h2 style="text-shadow: 0px 4px 84px 0px rgba(255, 255, 255, 0.85);" class="bg-transparent">
 		The Timeline
 	</h2>
@@ -163,14 +169,13 @@
 </Section>
 
 <Section>
-	<img
-		src="{base}/assets/Asset 1.png"
-		class="absolute left-1/2 top-[-10%] z-[-100] w-full max-w-lg translate-x-[-50%] rotate-[50deg]"
-		alt="Gradient"
-	/>
-	<div
-		class="absolute left-1/2 top-[-10%] z-[-100] aspect-square w-full translate-x-[-50%] bg-gradient-to-b from-transparent to-black to-70%"
-	></div>
+	<div class="absolute left-0 top-[-3rem] box-content h-full w-full overflow-clip pb-64">
+		<img
+			src="{base}/assets/Asset 1.png"
+			class="gradient absolute left-1/2 top-0 z-[-100] w-[1024px] max-w-lg translate-x-[-50%] rotate-[50deg]"
+			alt="Gradient"
+		/>
+	</div>
 	<div class="relative mb-12 flex items-center">
 		<h1>Get started now.</h1>
 	</div>

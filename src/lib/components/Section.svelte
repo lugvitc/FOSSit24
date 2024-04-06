@@ -1,5 +1,7 @@
-<section class="px-8 py-24">
-	<div class="relative m-auto w-full max-w-6xl">
-		<slot />
+<section class="relative overflow-x-clip">
+	<div class="mx-8 my-24">
+		<div class="m-auto w-full max-w-6xl">
+			<slot />
+		</div>
 	</div>
 </section>

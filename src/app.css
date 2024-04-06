@@ -23,6 +23,10 @@ p {
 	@apply text-lg text-zinc-400;
 }
 
+.gradient {
+	@apply max-w-[unset] blur-lg xl:blur-0;
+}
+
 * {
 	@apply text-lg;
 }
