@@ -24,7 +24,7 @@ p {
 }
 
 .gradient {
-	@apply max-w-[unset] blur-lg xl:blur-0;
+	@apply max-w-[unset] blur-sm xl:blur-0 brightness-[0.7] xl:brightness-100;
 }
 
 * {

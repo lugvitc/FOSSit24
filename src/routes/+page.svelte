@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 	import { base } from '$app/paths';
 </script>
 
@@ -9,6 +10,7 @@
 	<title>FOSSit '24</title>
 </svelte:head>
 
+<Navbar />
 <Section>
 	<img
 		src="assets/Asset 4.png"
@@ -172,7 +174,7 @@
 	<div class="absolute left-0 top-[-3rem] box-content h-full w-full overflow-clip pb-64">
 		<img
 			src="{base}/assets/Asset 1.png"
-			class="gradient absolute left-1/2 top-0 z-[-100] w-[1024px] max-w-lg translate-x-[-50%] rotate-[50deg]"
+			class="gradient absolute left-1/2 top-0 z-[-100] w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
 			alt="Gradient"
 		/>
 	</div>
