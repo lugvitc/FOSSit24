@@ -171,14 +171,14 @@
 </Section>
 
 <Section>
-	<div class="absolute left-0 top-[-3rem] box-content h-full w-full overflow-clip pb-64">
+	<div class="absolute left-0 top-[-3rem] box-content h-[0px] w-full overflow-clip pb-[70vh]">
 		<img
 			src="{base}/assets/Asset 1.png"
 			class="gradient absolute left-1/2 top-0 z-[-100] w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
 			alt="Gradient"
 		/>
 	</div>
-	<div class="relative mb-12 flex items-center">
+	<div class="relative mb-12 mt-[30vh] flex items-center">
 		<h1>Get started now.</h1>
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
