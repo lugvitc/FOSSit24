@@ -1,0 +1,40 @@
+/* Robit Bold */
+@font-face {
+	font-family: 'Robit';
+	src: url('robittrial-bold.otf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* Robit Dark */
+@font-face {
+	font-family: 'Robit';
+	src: url('robittrial-dark.otf') format('opentype');
+	font-weight: 800;
+	/* Adjust if necessary */
+	font-style: normal;
+}
+
+/* Robit Light */
+@font-face {
+	font-family: 'Robit';
+	src: url('robittrial-light.otf') format('opentype');
+	font-weight: lighter;
+	font-style: normal;
+}
+
+/* Robit Medium */
+@font-face {
+	font-family: 'Robit';
+	src: url('robittrial-medium.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+/* Robit Regular */
+@font-face {
+	font-family: 'Robit';
+	src: url('robittrial-regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}

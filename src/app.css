@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+	@apply text-7xl font-bold translate-y-4;
+}
+
+h2 {
+	@apply text-4xl font-bold;
+}
+
+h3 {
+	@apply text-2xl mb-6;
+}
+
+h4,
+.h4 {
+	@apply text-xl leading-[2.5rem];
+}
+
+p {
+	@apply text-lg text-zinc-400;
+}
+
+.gradient {
+	@apply max-w-[unset] blur-lg xl:blur-0;
+}
+
+* {
+	@apply text-lg;
+}
