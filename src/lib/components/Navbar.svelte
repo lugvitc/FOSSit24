@@ -37,12 +37,14 @@
 	}
 </script>
 
-<div class="relative m-auto mt-12 flex w-full max-w-6xl justify-between px-8 xl:px-0">
-	<img
-		src="{base}/assets/Asset 2.png"
-		class="absolute left-[-700px] top-[-700px] z-[-100] h-[1000px] w-[1000px]"
-		alt="Gradient background"
-	/>
+<div class="m-auto mt-12 flex w-full max-w-6xl justify-between px-8 xl:px-0">
+	<div class="absolute left-0 top-0 w-full overflow-x-clip">
+		<img
+			src="{base}/assets/Asset 2.png"
+			class="gradient absolute left-[-500px] top-[-700px] z-[-100] h-[1000px] w-[1000px] rotate-[180deg]"
+			alt="Gradient background"
+		/>
+	</div>
 	<div class="flex items-center space-x-12">
 		<a href="{base}/">
 			<img src="{base}/lug_logo.png" class="h-12" alt="Logo" />
