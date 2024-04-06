@@ -19,7 +19,12 @@
 	/>
 	<div class="relative mb-8 flex flex-col space-y-8 xl:flex-row xl:items-center">
 		<h1>FOSSit ‘24</h1>
-		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-8" alt="FOSSit Logo" />
+		<img
+			src="{base}/logo.png"
+			class="h-20 w-20
+      -translate-y-4 xl:mx-8"
+			alt="FOSSit Logo"
+		/>
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
@@ -51,7 +56,26 @@
 			<h4 class="text-foreground">Contribute to real projects</h4>
 			<h4>Embark your journey by contributing to projects built by the linux club</h4>
 		</div>
-		<a class="font-bold text-foreground" href="{base}/">Take a peek -</a>
+		<div class="flex flex-row space-x-2">
+			<a class="font-bold text-foreground" href="{base}/">Take a peek </a>
+			<svg
+				width="16"
+				height="24"
+				viewBox="0 0 18 30"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<line x1="1.82288" y1="2.23223" x2="15.9029" y2="16.3122" stroke="white" stroke-width="5" />
+				<line
+					y1="-2.5"
+					x2="19.9121"
+					y2="-2.5"
+					transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 26)"
+					stroke="white"
+					stroke-width="5"
+				/>
+			</svg>
+		</div>
 	</Glass>
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
