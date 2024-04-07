@@ -1,5 +1,4 @@
 <script>
-	import Button from '$lib/components/Button.svelte';
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
@@ -28,8 +27,8 @@
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="{base}/">Learn more</Button>
+		<a href="{base}/register" data-primary data-button>Get started</a>
+		<a href="{base}/" data-button>Learn more</a>
 	</div>
 </Section>
 
@@ -54,10 +53,10 @@
 		<div class="absolute bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
 		<div class="mb-24 max-w-2xl">
 			<h4 class="text-foreground">Contribute to real projects</h4>
-			<h4>Embark your journey by contributing to projects built by the linux club</h4>
+			<h4>Embark your journey by contributing to projects built by button</h4>
 		</div>
 		<div class="flex flex-row space-x-2">
-			<a class="font-bold text-foreground" href="{base}/">Take a peek </a>
+			<a class="font-bold text-foreground" data-button href="{base}/">Take a peek </a>
 			<svg
 				width="16"
 				height="24"
@@ -206,7 +205,7 @@
 		<h1>Get started now.</h1>
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="{base}/">Learn more</Button>
+		<a data-button href="{base}/register" data-primary>Get started</a>
+		<a data-button href="{base}/">Learn more</a>
 	</div>
 </Section>

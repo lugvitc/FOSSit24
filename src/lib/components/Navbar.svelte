@@ -1,35 +1,45 @@
 <script lang="ts">
-	import { user } from '$lib/stores';
+	import { auth_user } from '$lib/stores';
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
-	import Button from './Button.svelte';
 	import { base } from '$app/paths';
 
 	let isOpen = false;
 
 	async function logout() {
-		// logout function
+		const { error } = await supabase.auth.signOut();
+		location.reload();
 	}
 
-	async function signup() {
-		// sign up function collapse navbar-collapse
-	}
+	// async function signup() {
+	// 	// sign up function collapse navbar-collapse
+	// }
 
 	async function login() {
-		// login function
+		const { data, error } = await supabase.auth.signInWithOAuth({
+			provider: 'github'
+		});
 	}
 
 	onMount(async () => {
+		if ($auth_user.id) return;
+
 		const { data } = await supabase.auth.getUser();
 
 		if (data.user) {
-			let { data: user_data } = await supabase
-				.from('user')
-				.select('*')
-				.eq('id', data.user.id)
-				.single();
-			$user = user_data;
+			$auth_user = data.user;
+			console.log('ASD');
 		}
+
+		// if (data.user) {
+		// 	let { data: user_data } = await supabase
+		// 		.from('user')
+		// 		.select('*')
+		// 		.eq('id', data.user.id)
+		// 		.single();
+		// 	$user = user_data;
+		// 	console.log(user_data);
+		// }
 	});
 
 	function toggleMenu() {
@@ -57,16 +67,15 @@
 		</div>
 	</div>
 	<div class="hidden items-center space-x-4 xl:flex">
-		{#if $user.id}
-			<Button href="{base}/">Logout</Button>
-			<Button href="{base}/" primary>{$user.name}</Button>
+		{#if $auth_user.id}
+			<button on:click={logout}>Logout</button>
+			<a href="{base}/" data-primary>@{$auth_user.user_metadata.user_name}</a>
 		{:else}
-			<Button href="{base}/">Login</Button>
-			<Button href="{base}/" primary>Signup</Button>
+			<button data-primary on:click={login}>Login</button>
 		{/if}
 	</div>
 	<div class="relative flex items-center justify-center xl:hidden">
-		<button class="block h-fit" on:click={toggleMenu}>
+		<button class="block h-fit border-0 !p-0" on:click={toggleMenu}>
 			<div class="space-y-2">
 				<span class="block h-0.5 w-6 bg-zinc-400"></span>
 				<span class="block h-0.5 w-6 bg-zinc-400"></span>
@@ -84,12 +93,11 @@
 		<a href="{base}/" class="block">Projects</a>
 		<a href="{base}/" class="block">Dashboard</a>
 		<div class="flex flex-col space-y-4 xl:hidden">
-			{#if $user.id}
-				<a href="{base}/">Logout</a>
-				<a href="{base}/" class="... truncate">{$user.name}</a>
+			{#if $auth_user.id}
+				<a on:click={logout} class="cursor-pointer">Logout</a>
+				<a href="{base}/">@{$auth_user.user_metadata.user_name}</a>
 			{:else}
-				<a href="{base}/">Login</a>
-				<a href="{base}/">Signup</a>
+				<a on:click={login} class="cursor-pointer">Login</a>
 			{/if}
 		</div>
 	</div>
