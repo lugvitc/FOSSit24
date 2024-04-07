@@ -56,13 +56,13 @@
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
 			<h4>
-				<dummy class="h4 inline text-white">Compete</dummy>
+				<dummy class="h4 inline text-foreground">Compete</dummy>
 				in mini contests win various goodies.
 			</h4>
 		</Glass>
 		<Glass>
 			<h4>
-				<dummy class="h4 inline text-white">Implement</dummy>
+				<dummy class="h4 inline text-foreground">Implement</dummy>
 				ideas made by you.
 			</h4>
 		</Glass>
