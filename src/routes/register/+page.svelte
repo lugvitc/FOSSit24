@@ -13,11 +13,11 @@
 	<img src="{base}/logo.png" class="m-auto mb-12 h-24 w-24" alt="FOSSit Logo" />
 	<h1 class="mb-16 text-center text-4xl xl:text-7xl">Register for FOSSit ‘24</h1>
 	<div
-		class="absolute left-0 top-0 z-[-100] box-content h-full w-full overflow-clip xl:top-[-12rem] xl:pb-[calc(100vh-693px)]"
+		class="absolute left-0 top-0 -z-10 box-content h-full w-full overflow-clip xl:top-[-12rem] xl:pb-[calc(100vh-693px)]"
 	>
 		<img
 			src="{base}/assets/Asset 1.png"
-			class="gradient absolute left-1/2 top-64 z-[-100] w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] !brightness-75 xl:w-[768px]"
+			class="gradient absolute left-1/2 top-64 -z-10 w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] !brightness-75 xl:w-[768px]"
 			alt="Gradient"
 		/>
 	</div>

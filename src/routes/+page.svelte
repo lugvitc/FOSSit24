@@ -14,16 +14,21 @@
 <Section>
 	<img
 		src="assets/Asset 4.png"
-		class="gradient absolute right-[-512px] top-[-256px] z-[-100] h-[1024px] w-[1024px] rotate-[128deg]"
+		class="gradient absolute right-[-512px] top-[-256px] -z-10 h-[1024px] w-[1024px] rotate-[128deg]"
 		alt="Gradient"
 	/>
 	<div class="relative mb-8 flex flex-col space-y-8 xl:flex-row xl:items-center">
 		<h1>FOSSit ‘24</h1>
-		<img src="{base}/logo.png" class="h-24 w-24 xl:mx-8" alt="FOSSit Logo" />
+		<img
+			src="{base}/logo.png"
+			class="h-20 w-20
+      -translate-y-3 xl:mx-8"
+			alt="FOSSit Logo"
+		/>
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/" primary>Get started</Button>
+		<Button href="{base}/register" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
 </Section>
@@ -42,7 +47,7 @@
 <Section>
 	<img
 		src="{base}/assets/Asset 3.png"
-		class="gradient absolute left-1/2 top-1/2 z-[-100] h-screen translate-x-[-50%] translate-y-[-50%]"
+		class="gradient absolute left-1/2 top-1/2 -z-10 h-screen translate-x-[-50%] translate-y-[-50%]"
 		alt="Gradient"
 	/>
 	<Glass>
@@ -51,7 +56,26 @@
 			<h4 class="text-foreground">Contribute to real projects</h4>
 			<h4>Embark your journey by contributing to projects built by the linux club</h4>
 		</div>
-		<a class="font-bold text-foreground" href="{base}/">Take a peek -</a>
+		<div class="flex flex-row space-x-2">
+			<a class="font-bold text-foreground" href="{base}/">Take a peek </a>
+			<svg
+				width="16"
+				height="24"
+				viewBox="0 0 18 30"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<line x1="1.82288" y1="2.23223" x2="15.9029" y2="16.3122" stroke="white" stroke-width="5" />
+				<line
+					y1="-2.5"
+					x2="19.9121"
+					y2="-2.5"
+					transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 26)"
+					stroke="white"
+					stroke-width="5"
+				/>
+			</svg>
+		</div>
 	</Glass>
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
@@ -72,7 +96,7 @@
 <Section>
 	<img
 		src="{base}/assets/Asset 2.png"
-		class="gradient absolute right-[-512px] top-0 z-[-100] h-[1024px] w-[1024px]"
+		class="gradient absolute right-[-512px] top-0 -z-10 h-[1024px] w-[1024px]"
 		alt="Gradient"
 	/>
 	<h2 style="text-shadow: 0px 4px 84px 0px rgba(255, 255, 255, 0.85);" class="bg-transparent">
@@ -171,18 +195,18 @@
 </Section>
 
 <Section>
-	<div class="absolute left-0 top-[-3rem] box-content h-full w-full overflow-clip pb-64">
+	<div class="absolute left-0 top-[-3rem] -z-10 box-content h-[0px] w-full overflow-clip pb-[70vh]">
 		<img
 			src="{base}/assets/Asset 1.png"
-			class="gradient absolute left-1/2 top-0 z-[-100] w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
+			class="gradient absolute left-1/2 top-0 -z-10 w-[512px] max-w-lg translate-x-[-50%] rotate-[50deg] xl:w-[1024px]"
 			alt="Gradient"
 		/>
 	</div>
-	<div class="relative mb-12 flex items-center">
+	<div class="relative mb-12 mt-[30vh] flex items-center">
 		<h1>Get started now.</h1>
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/" primary>Get started</Button>
+		<Button href="{base}/register" primary>Get started</Button>
 		<Button href="{base}/">Learn more</Button>
 	</div>
 </Section>
