@@ -25,7 +25,7 @@
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<h3 class="text-zinc-400">
-		Price pool of <dummy class="h3 inline text-foreground">₹10,000</dummy>!
+		Price pool of <dummy class="h3 inline text-foreground">₹10,000!</dummy>
 	</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<a href="{base}/register" data-primary data-button>Get started</a>
@@ -63,30 +63,10 @@
 			<br />
 			<h4>
 				Stand a chance to win from a prize pool of <dummy class="h4 inline text-foreground"
-					>₹10,000</dummy
-				>!
+					>₹10,000!</dummy
+				>
 			</h4>
 		</div>
-		<!-- <div class="flex flex-row space-x-2"> -->
-		<!-- 	<a class="font-bold text-foreground" href="{base}/">Take a peek </a> -->
-		<!-- 	<svg -->
-		<!-- 		width="16" -->
-		<!-- 		height="24" -->
-		<!-- 		viewBox="0 0 18 30" -->
-		<!-- 		fill="none" -->
-		<!-- 		xmlns="http://www.w3.org/2000/svg" -->
-		<!-- 	> -->
-		<!-- 		<line x1="1.82288" y1="2.23223" x2="15.9029" y2="16.3122" stroke="white" stroke-width="5" /> -->
-		<!-- 		<line -->
-		<!-- 			y1="-2.5" -->
-		<!-- 			x2="19.9121" -->
-		<!-- 			y2="-2.5" -->
-		<!-- 			transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 26)" -->
-		<!-- 			stroke="white" -->
-		<!-- 			stroke-width="5" -->
-		<!-- 		/> -->
-		<!-- 	</svg> -->
-		<!-- </div> -->
 	</Glass>
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
@@ -147,8 +127,8 @@
 		</div>
 		<div class="mt-24">
 			<div>
-				<h4 class="mb-12 ml-24 font-bold">14th April</h4>
-				<div class="mb-12 flex">
+				<h4 class="mb-12 ml-28 font-bold">14th April</h4>
+				<div class="mb-12 flex space-x-4">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
@@ -159,7 +139,7 @@
 						Workshop, Mini Contest, Ideation Round<br />9:00am to 12:00pm
 					</p>
 				</div>
-				<div class="mb-12 flex">
+				<div class="mb-12 flex space-x-4">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
@@ -172,7 +152,7 @@
 					</p>
 				</div>
 
-				<div class="mb-12 flex">
+				<div class="mb-12 flex space-x-4">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
@@ -188,8 +168,8 @@
 			</div>
 
 			<div>
-				<h4 class="mb-12 ml-24 font-bold">15th April</h4>
-				<div class="mb-12 flex">
+				<h4 class="mb-12 ml-28 font-bold">15th April</h4>
+				<div class="mb-12 flex space-x-4">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="w-24 flex-shrink-0">
 						<path
 							d="M67.6667 14C67.6667 21.3638 73.6362 27.3333 81 27.3333C88.3638 27.3333 94.3333 21.3638 94.3333 14C94.3333 6.6362 88.3638 0.666667 81 0.666667C73.6362 0.666667 67.6667 6.6362 67.6667 14ZM0 16.5H81V11.5H0V16.5Z"
