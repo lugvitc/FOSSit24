@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { auth_user } from '$lib/stores';
+	import { auth_user, user } from '$lib/stores';
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
@@ -11,35 +11,27 @@
 		location.reload();
 	}
 
-	// async function signup() {
-	// 	// sign up function collapse navbar-collapse
-	// }
-
 	async function login() {
 		const { data, error } = await supabase.auth.signInWithOAuth({
-			provider: 'github'
+			provider: 'github',
+			options: {
+				redirectTo: location.protocol + '//' + location.host + location.pathname
+			}
 		});
 	}
 
 	onMount(async () => {
-		if ($auth_user.id) return;
+		if (!$auth_user.id) {
+			const { data: auth_data } = await supabase.auth.getUser();
 
-		const { data } = await supabase.auth.getUser();
+			if (auth_data.user) {
+				$auth_user = auth_data.user;
+			}
 
-		if (data.user) {
-			$auth_user = data.user;
-			console.log('ASD');
+			let { data } = await supabase.from('users').select('*').eq('id', $auth_user.id).single();
+
+			$user = data || { needsonboarding: true };
 		}
-
-		// if (data.user) {
-		// 	let { data: user_data } = await supabase
-		// 		.from('user')
-		// 		.select('*')
-		// 		.eq('id', data.user.id)
-		// 		.single();
-		// 	$user = user_data;
-		// 	console.log(user_data);
-		// }
 	});
 
 	function toggleMenu() {
@@ -61,15 +53,15 @@
 		</a>
 		<div class="hidden items-center space-x-12 xl:flex">
 			<a href="{base}/">LUGVITC</a>
-			<a href="{base}/">Leaderboard</a>
+			<a href="{base}/leaderboard">Leaderboard</a>
 			<a href="{base}/">Projects</a>
-			<a href="{base}/">Dashboard</a>
+			<a href="{base}/dashboard">Dashboard</a>
 		</div>
 	</div>
 	<div class="hidden items-center space-x-4 xl:flex">
 		{#if $auth_user.id}
 			<button on:click={logout}>Logout</button>
-			<a href="{base}/" data-primary>@{$auth_user.user_metadata.user_name}</a>
+			<a href="{base}/dashboard" data-primary>@{$auth_user.user_metadata.user_name}</a>
 		{:else}
 			<button data-primary on:click={login}>Login</button>
 		{/if}
@@ -95,7 +87,7 @@
 		<div class="flex flex-col space-y-4 xl:hidden">
 			{#if $auth_user.id}
 				<a on:click={logout} class="cursor-pointer">Logout</a>
-				<a href="{base}/">@{$auth_user.user_metadata.user_name}</a>
+				<a href="{base}/dashboard">@{$auth_user.user_metadata.user_name}</a>
 			{:else}
 				<a on:click={login} class="cursor-pointer">Login</a>
 			{/if}

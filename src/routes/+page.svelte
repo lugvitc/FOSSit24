@@ -1,7 +1,6 @@
 <script>
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
 	import { base } from '$app/paths';
 </script>
 
@@ -9,7 +8,6 @@
 	<title>FOSSit '24</title>
 </svelte:head>
 
-<Navbar />
 <Section>
 	<img
 		src="assets/Asset 4.png"

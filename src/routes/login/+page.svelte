@@ -1,12 +1,9 @@
 <script lang="ts">
-	import Navbar from '$lib/components/Navbar.svelte';
 	import { base } from '$app/paths';
 	import Section from '$lib/components/Section.svelte';
 	import Glass from '$lib/components/Glass.svelte';
 	import Input from '$lib/components/Input.svelte';
 </script>
-
-<Navbar></Navbar>
 
 <div class="absolute left-0 top-0 -z-10 h-screen w-full overflow-clip">
 	<img

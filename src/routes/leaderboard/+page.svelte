@@ -2,6 +2,7 @@
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import { auth_user } from '$lib/stores';
+	import { onMount } from 'svelte';
 
 	// Github bot server caches a local list of the leaderboard.
 	// Frontend pings that server for the leaderboard.
@@ -21,25 +22,61 @@
 			points: 900
 		}
 	];
+
+	onMount(() => {
+		resize();
+	});
+
+	let arr = [1, 0, 2];
+
+	function resize() {
+		arr = innerWidth > 768 ? [1, 0, 2] : [0, 1, 2];
+	}
 </script>
+
+<svelte:window on:resize={resize} />
 
 <Section>
 	<div class="m-auto max-w-3xl space-y-8">
-		<div class="flex flex-row space-x-4">
-			{#each [1, 0, 2] as i}
-				<Glass class="!px-6 !pb-5 !pt-10">
+		<div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
+			{#each arr as i}
+				<!--cant dynamic this stuff-->
+				<Glass class="!px-6 !pb-5 !pt-10 {i == 0 ? 'md:-translate-y-6' : ''}">
 					<div
-						class="flex h-full w-full flex-col items-center justify-between space-y-4 text-center text-foreground"
+						class="flex h-full w-full flex-row-reverse items-center justify-between space-x-4 text-center text-foreground md:flex-col md:space-x-0 md:space-y-4"
 					>
 						<h4>{leaderboard[i].name}</h4>
 						<div
-							class="flex aspect-square w-fit w-full max-w-32 flex-col justify-center rounded-3xl border-4"
+							class="podium flex aspect-square h-full max-h-32 flex-col justify-center rounded-[35px] max-md:before:!m-0 md:w-full md:max-w-32"
 						>
 							<h4 class="text-5xl">{i + 1}</h4>
 						</div>
 					</div>
 				</Glass>
 			{/each}
+			<style lang="postcss">
+				.podium {
+					background: #000;
+					background-clip: padding-box; /* !importanté */
+					border: solid 8px transparent; /* !importanté */
+
+					position: relative;
+					box-sizing: border-box;
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						z-index: -1;
+						margin: -8px; /* !importanté */
+						border-radius: inherit; /* !importanté */
+						background: linear-gradient(to bottom, gold, black);
+					}
+				}
+			</style>
 		</div>
 		<div class="flex w-full justify-center space-x-4">
 			<button>Teams</button>
