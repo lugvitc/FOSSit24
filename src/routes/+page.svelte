@@ -1,8 +1,6 @@
 <script>
-	import Button from '$lib/components/Button.svelte';
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import Navbar from '$lib/components/Navbar.svelte';
 	import { base } from '$app/paths';
 </script>
 
@@ -10,7 +8,6 @@
 	<title>FOSSit '24</title>
 </svelte:head>
 
-<Navbar />
 <Section>
 	<img
 		src="assets/Asset 4.png"
@@ -31,8 +28,8 @@
 		Price pool of <dummy class="h3 inline text-foreground">₹10,000</dummy>!
 	</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="https://lugvitc.net">Learn more</Button>
+		<a href="{base}/register" data-primary data-button>Get started</a>
+		<a href="{base}/https://lugvitc.net" data-button>Learn more</a>
 	</div>
 </Section>
 
@@ -220,7 +217,7 @@
 		<h1>Get started now.</h1>
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
-		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="https://lugvitc.net">Learn more</Button>
+		<a data-button href="{base}/register" data-primary>Get started</a>
+		<a data-button href="https://lugvitc.net">Learn more</a>
 	</div>
 </Section>

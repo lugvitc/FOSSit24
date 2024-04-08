@@ -1,34 +1,36 @@
 <script lang="ts">
-	import { user } from '$lib/stores';
+	import { auth_user, user } from '$lib/stores';
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
-	import Button from './Button.svelte';
 	import { base } from '$app/paths';
 
 	let isOpen = false;
 
 	async function logout() {
-		// logout function
-	}
-
-	async function signup() {
-		// sign up function collapse navbar-collapse
+		const { error } = await supabase.auth.signOut();
+		location.reload();
 	}
 
 	async function login() {
-		// login function
+		const { data, error } = await supabase.auth.signInWithOAuth({
+			provider: 'github',
+			options: {
+				redirectTo: location.protocol + '//' + location.host + location.pathname
+			}
+		});
 	}
 
 	onMount(async () => {
-		const { data } = await supabase.auth.getUser();
+		if (!$auth_user.id) {
+			const { data: auth_data } = await supabase.auth.getUser();
 
-		if (data.user) {
-			let { data: user_data } = await supabase
-				.from('user')
-				.select('*')
-				.eq('id', data.user.id)
-				.single();
-			$user = user_data || {};
+			if (auth_data.user) {
+				$auth_user = auth_data.user;
+			}
+
+			let { data } = await supabase.from('users').select('*').eq('id', $auth_user.id).single();
+
+			$user = data || { needsonboarding: true };
 		}
 	});
 

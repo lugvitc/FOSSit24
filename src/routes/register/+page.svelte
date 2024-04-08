@@ -47,7 +47,7 @@
 					</g>
 				</svg>
 				<div class=" m-auto h-fit text-left xl:mt-4 xl:text-center">
-					<h2 class="text-2xl text-white">Solo Registration</h2>
+					<h2 class="text-2xl text-foreground">Solo Registration</h2>
 					<h4 class="text-sm">Register as an individual</h4>
 					<h4><b>INR 150</b></h4>
 				</div>
@@ -93,7 +93,7 @@
 					</g>
 				</svg>
 				<div class=" m-auto h-fit text-left xl:mt-4 xl:text-center">
-					<h2 class="text-2xl text-white">Duo Registration</h2>
+					<h2 class="text-2xl text-foreground">Duo Registration</h2>
 					<h4 class="text-sm">Register as a team of two</h4>
 					<h4><b>INR 250</b></h4>
 				</div>
@@ -147,7 +147,7 @@
 					</g>
 				</svg>
 				<div class=" m-auto h-fit text-left xl:mt-4 xl:text-center">
-					<h2 class="text-2xl text-white">Trio Registration</h2>
+					<h2 class="text-2xl text-foreground">Trio Registration</h2>
 					<h4 class="text-sm">Register as a team of three</h4>
 					<h4><b>INR 350</b></h4>
 				</div>

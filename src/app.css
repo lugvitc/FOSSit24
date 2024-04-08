@@ -24,6 +24,20 @@ p {
 	@apply text-lg text-zinc-400 md:text-xl;
 }
 
+button,
+a[data-button] {
+	@apply rounded-2xl border-[1px] border-foreground px-12 py-3 text-center text-foreground;
+}
+
+button[data-primary],
+a[data-primary] {
+	@apply rounded-2xl border-[1px] border-foreground px-0 xl:px-12 py-3 text-center text-background bg-foreground;
+}
+
+input {
+	@apply placeholder:translate-y-[3px];
+}
+
 .gradient {
 	@apply max-w-[unset] blur-sm brightness-[0.7] xl:blur-0 xl:brightness-100;
 }
