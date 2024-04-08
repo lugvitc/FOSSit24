@@ -48,15 +48,17 @@
 		/>
 	</div>
 	<div class="flex items-center space-x-12">
-		<a href="{base}/">
-			<img src="{base}/lug_logo.png" class="h-12" alt="Logo" />
-		</a>
-		<div class="hidden items-center space-x-12 xl:flex">
+		<div class="flex items-center space-x-6 xl:space-x-12">
+			<a href="{base}/">
+				<img src="{base}/lug_logo.png" class="h-12" alt="Logo" />
+			</a>
 			<a href="https://lugvitc.net">LUGVITC</a>
-			<!-- <a href="{base}/leaderboard">Leaderboard</a> -->
-			<!-- <a href="{base}/">Projects</a> -->
-			<!-- <a href="{base}/">Dashboard</a> -->
 		</div>
+		<!-- <div class="hidden items-center space-x-12 xl:flex"> -->
+		<!-- 	<a href="{base}/leaderboard">Leaderboard</a> -->
+		<!-- 	<a href="{base}/">Projects</a> -->
+		<!-- 	<a href="{base}/">Dashboard</a> -->
+		<!-- </div> -->
 	</div>
 	<!-- <div class="hidden items-center space-x-4 xl:flex"> -->
 	<!-- 	{#if $auth_user.id} -->
