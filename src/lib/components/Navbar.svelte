@@ -48,27 +48,30 @@
 		/>
 	</div>
 	<div class="flex items-center space-x-12">
-		<a href="{base}/">
-			<img src="{base}/lug_logo.png" class="h-12" alt="Logo" />
-		</a>
-		<div class="hidden items-center space-x-12 xl:flex">
+		<div class="flex items-center space-x-6 xl:space-x-12">
+			<a href="{base}/">
+				<img src="{base}/lug_logo.png" class="h-12" alt="Logo" />
+			</a>
 			<a href="https://lugvitc.net">LUGVITC</a>
-			<!-- <a href="{base}/">Leaderboard</a> -->
-			<!-- <a href="{base}/">Projects</a> -->
-			<!-- <a href="{base}/">Dashboard</a> -->
 		</div>
+		<!-- <div class="hidden items-center space-x-12 xl:flex"> -->
+		<!-- 	<a href="{base}/leaderboard">Leaderboard</a> -->
+		<!-- 	<a href="{base}/">Projects</a> -->
+		<!-- 	<a href="{base}/">Dashboard</a> -->
+		<!-- </div> -->
 	</div>
 	<!-- <div class="hidden items-center space-x-4 xl:flex"> -->
-	<!-- 	{#if $user.id} -->
-	<!-- 		<Button href="{base}/">Logout</Button> -->
-	<!-- 		<Button href="{base}/" primary>{$user.name}</Button> -->
+	<!-- 	{#if $auth_user.id} -->
+	<!-- 		<button on:click={logout}>Logout</button> -->
+	<!-- 		<a href="{base}/" class="... max-w-72 truncate" data-primary -->
+	<!-- 			>@{$auth_user.user_metadata.user_name}</a -->
+	<!-- 		> -->
 	<!-- 	{:else} -->
-	<!-- 		<Button href="{base}/">Login</Button> -->
-	<!-- 		<Button href="{base}/" primary>Signup</Button> -->
+	<!-- 		<button data-primary on:click={login}>Login</button> -->
 	<!-- 	{/if} -->
 	<!-- </div> -->
 	<!-- <div class="relative flex items-center justify-center xl:hidden"> -->
-	<!-- 	<button class="block h-fit" on:click={toggleMenu}> -->
+	<!-- 	<button class="block h-fit border-0 !p-0" on:click={toggleMenu}> -->
 	<!-- 		<div class="space-y-2"> -->
 	<!-- 			<span class="block h-0.5 w-6 bg-zinc-400"></span> -->
 	<!-- 			<span class="block h-0.5 w-6 bg-zinc-400"></span> -->
@@ -82,16 +85,15 @@
 <!-- 	style="display: {isOpen ? 'block' : 'none'};" -->
 <!-- > -->
 <!-- 	<div class="space-y-4 px-8 py-8 xl:hidden"> -->
-<!-- 		<a href="{base}/" class="block">Leaderboard</a> -->
+<!-- 		<a href="{base}/leaderboard" class="block">Leaderboard</a> -->
 <!-- 		<a href="{base}/" class="block">Projects</a> -->
 <!-- 		<a href="{base}/" class="block">Dashboard</a> -->
 <!-- 		<div class="flex flex-col space-y-4 xl:hidden"> -->
-<!-- 			{#if $user.id} -->
-<!-- 				<a href="{base}/">Logout</a> -->
-<!-- 				<a href="{base}/" class="... truncate">{$user.name}</a> -->
+<!-- 			{#if $auth_user.id} -->
+<!-- 				<a on:click={logout} class="cursor-pointer">Logout</a> -->
+<!-- 				<a href="{base}/" class="... truncate">@{$auth_user.user_metadata.user_name}</a> -->
 <!-- 			{:else} -->
-<!-- 				<a href="{base}/">Login</a> -->
-<!-- 				<a href="{base}/">Signup</a> -->
+<!-- 				<a on:click={login} class="cursor-pointer">Login</a> -->
 <!-- 			{/if} -->
 <!-- 		</div> -->
 <!-- 	</div> -->
