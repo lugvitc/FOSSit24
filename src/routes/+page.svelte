@@ -29,13 +29,13 @@
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="{base}/">Learn more</Button>
+		<Button href="https://lugvitc.net">Learn more</Button>
 	</div>
 </Section>
 
 <Section>
 	<h2 class="mb-4">Open the doors to open source</h2>
-	<h4>
+	<h4 class="text-zinc-400">
 		Collaborative learning meets hands-on experience
 		<br />
 		in a dynamic exploration of Git, coding challenges,
@@ -51,43 +51,51 @@
 		alt="Gradient"
 	/>
 	<Glass>
-		<div class="absolute bottom-0 right-0 h-1/3 w-1/2 rounded-tl-3xl bg-white"></div>
-		<div class="mb-24 max-w-2xl">
-			<h4 class="text-foreground">Contribute to real projects</h4>
-			<h4>Embark your journey by contributing to projects built by the linux club</h4>
+		<div
+			class="absolute bottom-0 right-0 hidden h-3/4 w-1/2 overflow-hidden rounded-tl-3xl bg-white xl:block"
+		>
+			<img
+				src="{base}/hero_image.png"
+				class="h-[unset] h-auto max-h-[unset] max-h-full w-auto max-w-[unset] xl:w-[unset] xl:max-w-full"
+			/>
 		</div>
-		<div class="flex flex-row space-x-2">
-			<a class="font-bold text-foreground" href="{base}/">Take a peek </a>
-			<svg
-				width="16"
-				height="24"
-				viewBox="0 0 18 30"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<line x1="1.82288" y1="2.23223" x2="15.9029" y2="16.3122" stroke="white" stroke-width="5" />
-				<line
-					y1="-2.5"
-					x2="19.9121"
-					y2="-2.5"
-					transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 26)"
-					stroke="white"
-					stroke-width="5"
-				/>
-			</svg>
+
+		<div class="w-full max-w-2xl xl:mb-24 xl:w-1/2">
+			<h4 class="text-foreground">Compete with other teams</h4>
+			<h4>Keep the contributions rolling and win goodies in mini contests</h4>
 		</div>
+		<!-- <div class="flex flex-row space-x-2"> -->
+		<!-- 	<a class="font-bold text-foreground" href="{base}/">Take a peek </a> -->
+		<!-- 	<svg -->
+		<!-- 		width="16" -->
+		<!-- 		height="24" -->
+		<!-- 		viewBox="0 0 18 30" -->
+		<!-- 		fill="none" -->
+		<!-- 		xmlns="http://www.w3.org/2000/svg" -->
+		<!-- 	> -->
+		<!-- 		<line x1="1.82288" y1="2.23223" x2="15.9029" y2="16.3122" stroke="white" stroke-width="5" /> -->
+		<!-- 		<line -->
+		<!-- 			y1="-2.5" -->
+		<!-- 			x2="19.9121" -->
+		<!-- 			y2="-2.5" -->
+		<!-- 			transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 26)" -->
+		<!-- 			stroke="white" -->
+		<!-- 			stroke-width="5" -->
+		<!-- 		/> -->
+		<!-- 	</svg> -->
+		<!-- </div> -->
 	</Glass>
 	<div class="mt-4 flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0">
 		<Glass>
 			<h4>
-				<dummy class="h4 inline text-white">Compete</dummy>
-				in mini contests win various goodies.
+				<dummy class="h4 text-white">Contribute to real projects</dummy>
+				and begin your FOSS journey
 			</h4>
 		</Glass>
 		<Glass>
 			<h4>
-				<dummy class="h4 inline text-white">Implement</dummy>
-				ideas made by you.
+				<dummy class="h4 inline text-white">Ideate with everyone</dummy> and see your ideas come to life
+				with the FOSS community
 			</h4>
 		</Glass>
 	</div>
@@ -156,7 +164,7 @@
 						/>
 					</svg>
 					<p>
-						Round One<br />
+						Round 1 Contributions Begin<br />
 						2:00pm to 6:00pm
 					</p>
 				</div>
@@ -169,7 +177,7 @@
 						/>
 					</svg>
 					<p>
-						Round 2 Starts
+						Round 2 Hackathon Begins
 						<br />
 						8:00pm
 					</p>
@@ -207,6 +215,6 @@
 	</div>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<Button href="{base}/register" primary>Get started</Button>
-		<Button href="{base}/">Learn more</Button>
+		<Button href="https://lugvitc.net">Learn more</Button>
 	</div>
 </Section>
