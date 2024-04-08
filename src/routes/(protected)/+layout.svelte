@@ -22,7 +22,9 @@
 
 <Loading {loading}>
 	{#if !$auth_user.id}
-		<p>Not logged in</p>
+		<div class="absolute left-0 top-0 -z-10 flex h-screen w-screen items-center justify-center">
+			<h4>Not logged in :(</h4>
+		</div>
 	{:else if $user.id}
 		<slot />
 	{:else}
