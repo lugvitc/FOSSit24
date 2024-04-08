@@ -29,7 +29,7 @@
 	</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<a href="{base}/register" data-primary data-button>Get started</a>
-		<a href="{base}/https://lugvitc.net" data-button>Learn more</a>
+		<a href="https://lugvitc.net" data-button>Learn more</a>
 	</div>
 </Section>
 
