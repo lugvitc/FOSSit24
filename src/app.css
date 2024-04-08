@@ -10,7 +10,8 @@ h2 {
 	@apply text-4xl font-bold md:text-5xl;
 }
 
-h3 {
+h3,
+.h3 {
 	@apply mb-6 text-2xl md:text-3xl;
 }
 

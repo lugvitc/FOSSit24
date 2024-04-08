@@ -27,6 +27,9 @@
 		/>
 	</div>
 	<h3 class="text-zinc-400">The open source Hackathon and Workshop</h3>
+	<h3 class="text-zinc-400">
+		Price pool of <dummy class="h3 inline text-foreground">₹10,000</dummy>!
+	</h3>
 	<div class="flex w-fit flex-col space-y-4 xl:flex-row xl:space-x-8 xl:space-y-0">
 		<Button href="{base}/register" primary>Get started</Button>
 		<Button href="https://lugvitc.net">Learn more</Button>
@@ -54,15 +57,18 @@
 		<div
 			class="absolute bottom-0 right-0 hidden h-3/4 w-1/2 overflow-hidden rounded-tl-3xl bg-white xl:block"
 		>
-			<img
-				src="{base}/hero_image.png"
-				class="h-[unset] h-auto max-h-[unset] max-h-full w-auto max-w-[unset] xl:w-[unset] xl:max-w-full"
-			/>
+			<img src="{base}/hero_image.png" />
 		</div>
 
 		<div class="w-full max-w-2xl xl:mb-24 xl:w-1/2">
 			<h4 class="text-foreground">Compete with other teams</h4>
 			<h4>Keep the contributions rolling and win goodies in mini contests</h4>
+			<br />
+			<h4>
+				Stand a chance to win from a prize pool of <dummy class="h4 inline text-foreground"
+					>₹10,000</dummy
+				>!
+			</h4>
 		</div>
 		<!-- <div class="flex flex-row space-x-2"> -->
 		<!-- 	<a class="font-bold text-foreground" href="{base}/">Take a peek </a> -->
@@ -144,7 +150,7 @@
 		</div>
 		<div class="mt-24">
 			<div>
-				<h4 class="mb-12 ml-24 font-bold">15th April</h4>
+				<h4 class="mb-12 ml-24 font-bold">14th April</h4>
 				<div class="mb-12 flex">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-24 flex-shrink-0">
 						<path
@@ -185,7 +191,7 @@
 			</div>
 
 			<div>
-				<h4 class="mb-12 ml-24 font-bold">16th April</h4>
+				<h4 class="mb-12 ml-24 font-bold">15th April</h4>
 				<div class="mb-12 flex">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" class="w-24 flex-shrink-0">
 						<path
@@ -194,7 +200,7 @@
 						/>
 					</svg>
 					<p>
-						Round 2 Ends<br />8:00am
+						Round 2 Hackathon Ends<br />8:00am
 					</p>
 				</div>
 			</div>
