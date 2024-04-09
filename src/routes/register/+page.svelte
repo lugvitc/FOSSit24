@@ -66,13 +66,6 @@
 							placeholder="John Doe"
 							required
 						/>
-						<Input
-							title="Registration Number"
-							name="team_members"
-							class="w-full"
-							placeholder="00AAA0000"
-							required
-						/>
 					{:else}
 						<Input
 							title="Team Name"
@@ -81,9 +74,9 @@
 							placeholder="Triple A Battery"
 							required
 						/>
-						{#each { length: Number(size) } as _, i}
+						{#each { length: Number(size) - 1 } as _, i}
 							<Input
-								title="Registration Number {i + 1}"
+								title="Member {i + 2}'s VIT Chennai Events Username"
 								name="team_members"
 								class="w-full"
 								placeholder="00AAA0000"
