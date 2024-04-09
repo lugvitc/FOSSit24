@@ -27,7 +27,7 @@
 			])
 			.select();
 
-		if (!error) location.replace('/');
+		if (!error) location.replace('/whatsapp');
 	}
 
 	function toggle(e: Event) {
