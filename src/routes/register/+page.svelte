@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import { base } from '$app/paths';
