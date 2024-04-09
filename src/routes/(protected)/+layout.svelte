@@ -31,6 +31,13 @@
 </script>
 
 <Loading {loading}>
+	<div class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden">
+		<img
+			src="assets/Asset 1.png"
+			class="gradient absolute top-52 -z-10 h-[1024px] w-[1024px] rotate-[128deg] overflow-hidden"
+			alt="Gradient"
+		/>
+	</div>
 	{#if !$auth_user.id}
 		<div
 			class="absolute left-0 top-0 -z-10 flex h-screen w-screen flex-col items-center justify-center space-y-12"
