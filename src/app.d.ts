@@ -26,5 +26,14 @@ interface Team {
 	points: number;
 }
 
-export { Team };
-export { User };
+interface Idea {
+	id: number;
+	title: string;
+	created_at: string;
+	url: string;
+	description: string;
+	votes: number;
+	team: string;
+}
+
+export { Team, User, Idea };
