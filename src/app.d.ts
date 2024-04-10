@@ -27,12 +27,11 @@ interface Team {
 }
 
 interface Idea {
-	id: number;
-	title: string;
-	created_at: string;
-	url: string;
-	description: string;
-	votes: number;
+	id: number | null;
+	title: string | '';
+	url: string | '';
+	description: string | '';
+	votes: number | null;
 	team: string;
 }
 
