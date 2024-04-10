@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Idea } from '../../app';
 	import { auth_user, user } from '$lib/stores';
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
@@ -8,6 +7,13 @@
 	let voteButtonText: string | number = 'Vote';
 	let voted: boolean = false;
 
+	interface Idea {
+		id: number | null;
+		title: string | null;
+		description: string | null;
+		team: string | null;
+		url: string | null;
+	}
 	let idea: Idea;
 	export { className as class };
 	export { idea };
@@ -18,13 +24,17 @@
 			.select('*')
 			.eq('idea_id', idea.id)
 			.eq('user_id', $user.id)
-			.single();
+			.maybeSingle();
 
 		if (data) {
 			voteButtonText = 'Voted!';
 			voted = true;
 		}
 	});
+
+	async function editIdea() {
+		location.replace('/ideas/newIdea');
+	}
 
 	async function toggleVote() {
 		if (!voted) {
@@ -60,16 +70,26 @@
 </script>
 
 <div
-	class="glass relative w-full space-y-4 overflow-hidden rounded-3xl border-[1px] border-zinc-500 px-4 py-4 text-zinc-400 backdrop-blur-2xl xl:px-6 xl:py-8 {className}"
+	class="glass relative flex w-full flex-col justify-between space-y-4 overflow-hidden rounded-3xl border-[1px] border-zinc-500 px-4 py-4 text-zinc-400 backdrop-blur-2xl xl:px-6 xl:py-8 {className}"
 >
-	<h4 class="text-center text-foreground">{idea.title}</h4>
-	<p
-		class="line-clamp-4 text-center text-sm leading-6 tracking-wide text-white md:line-clamp-5 lg:line-clamp-6"
-	>
-		{idea.description}
-	</p>
-	<button on:click={window.open(idea.url)} class="w-full">View on Github</button>
-	<button on:click={toggleVote} data-primary class="w-full">{voteButtonText}</button>
+	<div>
+		<h4 class="text-center text-foreground">{idea.title}</h4>
+		<p
+			class="line-clamp-4 text-center text-sm leading-6 tracking-wide text-white md:line-clamp-5 lg:line-clamp-6"
+		>
+			{idea.description}
+		</p>
+	</div>
+	<div class="flex flex-col justify-center space-y-4">
+		{#if idea.team == $user.team}
+			<button on:click={editIdea} data-primary class="w-full">Edit</button>
+		{:else}
+			<button on:click={toggleVote} data-primary class="w-full">{voteButtonText}</button>
+		{/if}
+		{#if idea.url}
+			<button on:click={window.open(idea.url)} class="w-full">View on Github</button>
+		{/if}
+	</div>
 </div>
 
 <style>
