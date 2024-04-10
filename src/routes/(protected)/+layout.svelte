@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { auth_user, user } from '$lib/stores';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import supabase from '$lib/supabase';
 	import Loading from '$lib/components/Loading.svelte';
 	import Onboard from '$lib/components/Onboard.svelte';
@@ -33,7 +34,7 @@
 <Loading {loading}>
 	<div class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden">
 		<img
-			src="assets/Asset 1.png"
+			src="{base}/assets/Asset 1.png"
 			class="gradient absolute top-52 -z-10 h-[1024px] w-[1024px] rotate-[128deg] overflow-hidden"
 			alt="Gradient"
 		/>

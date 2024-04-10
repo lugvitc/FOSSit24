@@ -6,7 +6,11 @@
 	import { onMount } from 'svelte';
 	import supabase from '$lib/supabase';
 
-	let team_members: any = [];
+	interface TeamMembers {
+		name: string;
+		reg_no: string;
+	}
+	let team_members: TeamMembers[] = [];
 	let isContentVisible = false;
 	let buttonText: string = 'Copy Team ID';
 	let copied = false;
