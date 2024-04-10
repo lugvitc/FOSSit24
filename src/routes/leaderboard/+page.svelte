@@ -1,40 +1,62 @@
 <script lang="ts">
+	import supabase from '$lib/supabase';
 	import Glass from '$lib/components/Glass.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import { auth_user } from '$lib/stores';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	// Github bot server caches a local list of the leaderboard.
 	// Frontend pings that server for the leaderboard.
 	// The frontend sorts the list, not the server.
 	// REMEMBER TO CACHE JSON
 	let teams = true;
-	let leaderboard = [
+	let leaderboard: any = [
 		{
-			name: 'TeamBerlin',
-			points: 1000
+			name: '',
+			points: 0
 		},
 		{
-			name: 'TeamASd',
-			points: 800
+			name: '',
+			points: 0
 		},
 		{
-			name: 'Team JASD',
-			points: 900
+			name: '',
+			points: 0
 		}
 	];
 
-	onMount(() => {
+	async function loadTeams() {
+		const { data, error } = await supabase.from('teams').select('name, points');
+		if (error) {
+			console.log(error);
+		}
+		leaderboard = data;
+	}
+
+	async function loadIdeas() {
+		const { data, error } = await supabase.from('ideas').select('title, votes, url');
+		leaderboard = data;
+		if (error) {
+			console.log(error);
+		}
+	}
+
+	onMount(async () => {
+		loadTeams();
 		resize();
 	});
 
 	let arr = [1, 0, 2];
-
 	function resize() {
 		arr = innerWidth > 768 ? [1, 0, 2] : [0, 1, 2];
 	}
-	function toggle(e: Event) {
+	async function toggle(e: Event) {
 		teams = e.target.getAttribute('data-create') == 'false';
+		if (!teams) {
+			loadIdeas();
+		} else {
+			loadTeams();
+		}
 	}
 </script>
 
@@ -42,6 +64,12 @@
 
 <Section>
 	<div class="m-auto max-w-3xl space-y-8">
+		<img
+			src="{base}/assets/Asset 2.png"
+			class="gradient absolute left-1/2 top-1/2 -z-10 hidden h-screen translate-x-[-50%] translate-y-[-50%] md:block"
+			alt="Gradient"
+		/>
+
 		<div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
 			{#each arr as i}
 				<!--cant dynamic this stuff-->
@@ -110,24 +138,25 @@
 			<div
 				class="mb-2 flex flex-row justify-center space-x-4 border-b-2 border-solid border-zinc-400 px-2 py-4 text-center"
 			>
-				<p class="flex-1">Rank</p>
+				<p class="flex-1 text-foreground">Rank</p>
 				{#if teams}
-					<p class="flex-[4]">Team Name</p>
-					<p class="flex-1">Points</p>
+					<p class="flex-[4] text-foreground">Team Name</p>
+					<p class="flex-1 text-foreground">Points</p>
 				{:else}
-					<p class="flex-[4]">Idea</p>
-					<p class="flex-1">Votes</p>
+					<p class="flex-[4] text-foreground">Idea</p>
+					<p class="flex-1 text-foreground">Votes</p>
 				{/if}
 			</div>
-			{#each leaderboard as team, i}
-				<div
-					class="flex flex-row justify-center space-x-4 px-2 text-center {i % 2
-						? 'bg-white bg-opacity-5'
-						: 'bg-background'}"
-				>
+			{#each leaderboard as data, i}
+				<div class="flex flex-row justify-center space-x-4 bg-opacity-5 px-2 text-center">
 					<p class="flex-1 py-2 text-foreground">{i + 1}</p>
-					<p class="flex-[4] py-2 text-foreground">{team.name}</p>
-					<p class="flex-1 py-2 text-foreground">{team.points}</p>
+					{#if teams}
+						<p class="flex-[4] py-2 text-foreground">{data.name}</p>
+						<p class="flex-1 py-2 text-foreground">{data.points}</p>
+					{:else}
+						<a href={data.url} class="flex-[4] py-2 text-foreground">{data.title}</a>
+						<p class="flex-1 py-2 text-foreground">{data.votes}</p>
+					{/if}
 				</div>
 			{/each}
 		</div>
@@ -136,7 +165,7 @@
 
 <style lang="postcss">
 	button {
-		@apply rounded-2xl border-[1px] border-foreground bg-background px-12 py-3 text-center text-foreground;
+		@apply rounded-2xl border-[1px] border-foreground bg-background bg-opacity-5 px-12 py-3 text-center text-foreground;
 	}
 	button[data-primary] {
 		@apply rounded-2xl border-[1px] border-foreground bg-foreground px-12 py-3 text-center text-background;
