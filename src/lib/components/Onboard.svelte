@@ -37,10 +37,7 @@
 
 			if (error) return console.error(error);
 
-			await supabase.from('users').update({
-				id: $auth_user.id,
-				team: data[0].team_id
-			});
+			await supabase.from('users').update({ team: data[0].team_id }).eq('id', $auth_user.id);
 		}
 
 		if (!error) location.replace('/dashboard');
@@ -73,7 +70,8 @@
 						required
 					/>
 					<Input title="Full name" name="name" class="w-full" placeholder="John Doe" required />
-					<div class="flex space-x-4">
+
+					<div class="grid grid-cols-2 gap-4">
 						<button
 							on:click={toggle}
 							data-primary={!create || null}
@@ -81,7 +79,7 @@
 							class="w-full px-0"
 							type="button"
 						>
-							Join a team
+							Join A Team
 						</button>
 						<button
 							on:click={toggle}
@@ -90,9 +88,10 @@
 							class="w-full px-0"
 							type="button"
 						>
-							Create a team
+							Create A Team
 						</button>
 					</div>
+
 					{#if create}
 						<Input
 							title="Team Name"
@@ -121,3 +120,12 @@
 		</Glass>
 	</div>
 </Section>
+
+<style lang="postcss">
+	button {
+		@apply rounded-2xl border-[1px] border-foreground px-4 py-3 text-center text-foreground lg:px-0;
+	}
+	button[data-primary] {
+		@apply rounded-2xl border-[1px] border-foreground bg-foreground px-4 py-3 text-center text-background lg:px-0;
+	}
+</style>

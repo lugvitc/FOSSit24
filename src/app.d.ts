@@ -15,11 +15,24 @@ export {};
 interface User {
 	id: string;
 	name: string;
-	team_id: string;
-	team_name: string;
-	github: string;
-	points: number;
+	team: string;
+	reg_no: string;
 	sessionOrgId: string | null;
 }
 
-export { User };
+interface Team {
+	team_id: string;
+	name: string;
+	points: number;
+}
+
+interface Idea {
+	id: number | null;
+	title: string | '';
+	url: string | '';
+	description: string | '';
+	votes: number | null;
+	team: string;
+}
+
+export { Team, User, Idea };

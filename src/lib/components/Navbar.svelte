@@ -3,6 +3,8 @@
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { redirect } from '@sveltejs/kit';
+	import { goto } from '$app/navigation';
 
 	let isOpen = false;
 
@@ -32,6 +34,9 @@
 
 			$user = data || { needsonboarding: true };
 		}
+		if (!$user.team) {
+			$user.needsjointeam = true;
+		}
 	});
 
 	function toggleMenu() {
@@ -56,14 +61,14 @@
 		</div>
 		<!-- <div class="hidden items-center space-x-12 xl:flex"> -->
 		<!-- 	<a href="{base}/leaderboard">Leaderboard</a> -->
-		<!-- 	<a href="{base}/">Projects</a> -->
-		<!-- 	<a href="{base}/">Dashboard</a> -->
+		<!-- 	<a href="{base}/projects">Projects</a> -->
+		<!-- 	<a href="{base}/ideas">Ideas</a> -->
 		<!-- </div> -->
 	</div>
 	<!-- <div class="hidden items-center space-x-4 xl:flex"> -->
 	<!-- 	{#if $auth_user.id} -->
 	<!-- 		<button on:click={logout}>Logout</button> -->
-	<!-- 		<a href="{base}/" class="... max-w-72 truncate" data-primary -->
+	<!-- 		<a href="{base}/dashboard" class="... max-w-72 truncate" data-primary -->
 	<!-- 			>@{$auth_user.user_metadata.user_name}</a -->
 	<!-- 		> -->
 	<!-- 	{:else} -->
@@ -86,12 +91,12 @@
 <!-- > -->
 <!-- 	<div class="space-y-4 px-8 py-8 xl:hidden"> -->
 <!-- 		<a href="{base}/leaderboard" class="block">Leaderboard</a> -->
-<!-- 		<a href="{base}/" class="block">Projects</a> -->
-<!-- 		<a href="{base}/" class="block">Dashboard</a> -->
+<!-- 		<a href="{base}/projects" class="block">Projects</a> -->
+<!-- 		<a href="{base}/ideas" class="block">Ideas</a> -->
 <!-- 		<div class="flex flex-col space-y-4 xl:hidden"> -->
 <!-- 			{#if $auth_user.id} -->
 <!-- 				<a on:click={logout} class="cursor-pointer">Logout</a> -->
-<!-- 				<a href="{base}/" class="... truncate">@{$auth_user.user_metadata.user_name}</a> -->
+<!-- 				<a href="{base}/dashboard" class="... truncate">@{$auth_user.user_metadata.user_name}</a> -->
 <!-- 			{:else} -->
 <!-- 				<a on:click={login} class="cursor-pointer">Login</a> -->
 <!-- 			{/if} -->
