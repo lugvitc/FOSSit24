@@ -4,6 +4,7 @@
 	import { user } from '$lib/stores';
 	import { onMount } from 'svelte';
 	import supabase from '$lib/supabase';
+	import { base } from '$app/paths';
 
 	interface Idea {
 		id: number | null;
@@ -23,15 +24,10 @@
 		submitedIdea = (
 			await supabase.from('ideas').select('team').eq('team', $user.team).maybeSingle()
 		).data;
-		console.log(submitedIdea);
 		if (error) {
 			console.log('Error retrieving data', error);
 		}
 	});
-
-	async function newIdea() {
-		location.replace('/ideas/newIdea');
-	}
 </script>
 
 <Section>
@@ -42,11 +38,12 @@
 	</div>
 
 	<div class="fixed bottom-0 right-0 z-10 p-5">
-		<button
+		<a
 			data-primary
-			on:click={newIdea}
+			href="{base}/ideas/newIdea"
 			class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background"
-			>{submitedIdea ? '>' : '+'}</button
 		>
+			{submitedIdea ? '>' : '+'}
+		</a>
 	</div>
 </Section>

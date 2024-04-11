@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 
 	let className = '';
-	let voteButtonText: string | number = 'Vote';
 	let voted: boolean = false;
 
 	interface Idea {
@@ -27,7 +26,6 @@
 			.maybeSingle();
 
 		if (data) {
-			voteButtonText = 'Voted!';
 			voted = true;
 		}
 	});
@@ -49,7 +47,6 @@
 			if (error) {
 				console.log('Error casting vote:', error);
 			} else {
-				voteButtonText = voted ? 'Vote' : 'Voted!';
 				voted = !voted;
 			}
 		} else if (voted) {
@@ -62,7 +59,6 @@
 			if (error) {
 				console.log('Error casting vote:', error);
 			} else {
-				voteButtonText = voted ? 'Vote' : 'Voted!';
 				voted = !voted;
 			}
 		}
@@ -81,13 +77,20 @@
 		</p>
 	</div>
 	<div class="flex flex-col justify-center space-y-4">
+		{#if idea.url}
+			<button on:click={window.open(idea.url)} class="w-full">View on Github</button>
+		{/if}
 		{#if idea.team == $user.team}
 			<button on:click={editIdea} data-primary class="w-full">Edit</button>
 		{:else}
-			<button on:click={toggleVote} data-primary class="w-full">{voteButtonText}</button>
-		{/if}
-		{#if idea.url}
-			<button on:click={window.open(idea.url)} class="w-full">View on Github</button>
+			<button
+				on:click={toggleVote}
+				on:mouseenter={(this.innerText = voted ? 'Unvote' : this.innerText)}
+				on:mouseleave={(this.innerText = voted ? 'Voted!' : 'Vote')}
+				data-primary
+				class="w-full {voted ? '!border-transparent !bg-green-300 hover:!bg-negative' : ''}"
+				>{voted ? 'Voted!' : 'Vote'}</button
+			>
 		{/if}
 	</div>
 </div>

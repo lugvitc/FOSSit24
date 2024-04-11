@@ -134,7 +134,7 @@
 							class="bottom-12 right-12 flex flex-col space-y-4 md:absolute md:flex-row md:space-x-4 md:space-y-0"
 						>
 							<button on:click={logout}>Logout</button>
-							<button class="border-0 bg-red-500 text-background" on:click={leaveTeam}
+							<button class="border-0 bg-negative text-background" on:click={leaveTeam}
 								>Leave Team</button
 							>
 						</div>
@@ -152,7 +152,7 @@
 							/>
 							<input
 								type="submit"
-								class="cursor-pointer rounded-2xl border-[1px] border-green-400 bg-green-400 px-12 py-3 text-center text-background"
+								class="cursor-pointer rounded-2xl border-[1px] border-positive bg-positive px-12 py-3 text-center text-background"
 								value="Let's Go!"
 							/>
 						</form>

@@ -42,6 +42,7 @@
 			console.log('Error retrieving idea', error.message);
 		}
 	}
+
 	async function save(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 
@@ -84,12 +85,20 @@
 					{idea.title ? 'Update Details' : 'New Idea'}
 				</h3>
 				<div class="flex flex-col space-y-8">
-					<Input name="title" title="Idea Title" class="w-full" value={idea.title || ''} required />
+					<Input
+						name="title"
+						title="Idea Title"
+						class="w-full"
+						value={idea.title || ''}
+						placeholder="Rocket to Mars"
+						required
+					/>
 
 					<div class="w-full">
 						<p class="font-bold text-foreground">Description</p>
 						<textarea
 							name="description"
+							placeholder="So we go boom..."
 							class="mt-2 h-36 w-full rounded-2xl border border-solid border-white bg-zinc-800 bg-opacity-30 p-4 text-foreground {className}"
 							value={idea.description || ''}
 							required
@@ -100,6 +109,7 @@
 						class="w-full"
 						name="url"
 						value={idea.url || ''}
+						pattern="^https://github\.com(?:/\S*)?$"
 						placeholder="https://github.com/<userame>/<repository>"
 					/>
 					<input
@@ -108,7 +118,7 @@
 						value={submitText}
 					/>
 					<button
-						class="{idea.title ? 'block' : 'hidden'} border-0 bg-red-500 text-background"
+						class="{idea.title ? 'block' : 'hidden'} border-0 bg-negative text-background"
 						on:click={deleteIdea}>Delete Idea</button
 					>
 				</div>

@@ -3,6 +3,8 @@
 	import supabase from '$lib/supabase';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { redirect } from '@sveltejs/kit';
+	import { goto } from '$app/navigation';
 
 	let isOpen = false;
 
@@ -31,6 +33,9 @@
 			let { data } = await supabase.from('users').select('*').eq('id', $auth_user.id).single();
 
 			$user = data || { needsonboarding: true };
+		}
+		if (!$user.team) {
+			$user.needsjointeam = true;
 		}
 	});
 

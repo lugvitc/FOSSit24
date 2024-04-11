@@ -5,7 +5,9 @@ export default {
 		extend: {
 			colors: {
 				foreground: "#fefefe",
-				background: "#000000"
+				background: "#000000",
+				positive: "rgb(74 222 128)",
+				negative: "rgb(239 68 68)"
 			}
 		},
 		fontFamily: {
