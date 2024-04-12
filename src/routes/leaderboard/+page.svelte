@@ -15,7 +15,7 @@
 
 	async function loadTeams() {
 		// loading = true;
-		const { data, error } = await supabase.from('teams').select('name, points');
+		const { data, error } = await supabase.from('leaderboard').select('name, points');
 		if (error) console.log(error);
 		if (data.length) leaderboard = data;
 		loading = false;
@@ -30,6 +30,7 @@
 	}
 
 	onMount(async () => {
+		console.log(await supabase.rpc('update_leaderboard'));
 		loadTeams();
 		resize();
 	});
@@ -64,13 +65,12 @@
 
 <svelte:window on:resize={resize} />
 
-<img
-	src="{base}/assets/Asset 2.png"
-	class="gradient absolute left-1/2 top-1/2 -z-10 hidden h-screen translate-x-[-50%] translate-y-[-50%] md:block"
-	alt="Gradient"
-/>
-
 <Loading {loading}>
+	<img
+		src="{base}/assets/Asset 2.png"
+		class="gradient absolute left-1/2 top-1/2 -z-10 hidden h-screen translate-x-[-50%] translate-y-[-50%] md:block"
+		alt="Gradient"
+	/>
 	<Section>
 		<div class="m-auto max-w-3xl space-y-8">
 			<div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
