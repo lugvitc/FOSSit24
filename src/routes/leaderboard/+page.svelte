@@ -15,7 +15,7 @@
 
 	async function loadTeams() {
 		// loading = true;
-		const { data, error } = await supabase.from('teams').select('name, points');
+		const { data, error } = await supabase.from('leaderboard').select('name, points');
 		if (error) console.log(error);
 		if (data.length) leaderboard = data;
 		loading = false;
@@ -64,13 +64,12 @@
 
 <svelte:window on:resize={resize} />
 
-<img
-	src="{base}/assets/Asset 2.png"
-	class="gradient absolute left-1/2 top-1/2 -z-10 hidden h-screen translate-x-[-50%] translate-y-[-50%] md:block"
-	alt="Gradient"
-/>
-
 <Loading {loading}>
+	<img
+		src="{base}/assets/Asset 2.png"
+		class="gradient absolute left-1/2 top-1/2 z-[-100] hidden h-screen translate-x-[-50%] translate-y-[-50%] md:block"
+		alt="Gradient"
+	/>
 	<Section>
 		<div class="m-auto max-w-3xl space-y-8">
 			<div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
@@ -82,6 +81,7 @@
 							<h4>{leaderboard[i].name}</h4>
 							<div
 								class="podium flex aspect-square h-full max-h-32 flex-col justify-center rounded-[35px] max-md:before:!m-0 md:w-full md:max-w-32"
+								id="podium{i + 1 + ''}"
 							>
 								<h4 class="text-5xl">{i + 1}</h4>
 							</div>
@@ -108,6 +108,18 @@
 							margin: -8px;
 							border-radius: inherit;
 							background: linear-gradient(to bottom, gold, black);
+						}
+					}
+
+					#podium2 {
+						&:before {
+							background: linear-gradient(to bottom, #e8e8e8, black);
+						}
+					}
+
+					#podium3 {
+						&:before {
+							background: linear-gradient(to bottom, #ff8126, black);
 						}
 					}
 				</style>

@@ -13,31 +13,29 @@
 
 		let team_id = formData.get('team_id') || null;
 
-		const { data, error } = await supabase
-			.from('users')
-			.insert([
-				{
-					id: $auth_user.id,
-					name: formData.get('name') as string,
-					reg_no: (formData.get('reg_no') as string).toLowerCase(),
-					team: team_id
-				}
-			])
-			.select();
+		const { data, error } = await supabase.from('users').insert([
+			{
+				id: $auth_user.id,
+				name: formData.get('name') as string,
+				reg_no: (formData.get('reg_no') as string).toLowerCase(),
+				team: team_id
+			}
+		]);
+
+		if (error) return console.error(error);
 
 		if (create) {
-			const { data, error } = await supabase
-				.from('teams')
-				.insert([
-					{
-						name: formData.get('team_name') as string
-					}
-				])
-				.select();
+			let team_id = crypto.randomUUID();
+			const { error } = await supabase.from('teams').insert([
+				{
+					team_id: team_id,
+					name: formData.get('team_name') as string
+				}
+			]);
 
 			if (error) return console.error(error);
 
-			await supabase.from('users').update({ team: data[0].team_id }).eq('id', $auth_user.id);
+			await supabase.from('users').update({ team: team_id }).eq('id', $auth_user.id);
 		}
 
 		if (!error) location.replace('/dashboard');

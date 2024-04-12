@@ -29,6 +29,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"prettier-plugin-svelte": "^3.2.2"
+		"@types/sanitize-html": "^2.11.0",
+		"prettier-plugin-svelte": "^3.2.2",
+		"svelte-markdown": "^0.4.1"
 	}
 }
