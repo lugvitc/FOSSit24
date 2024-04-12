@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+
 	let className = '';
 	export { className as class };
 </script>
 
 <div
 	class="glass relative w-full overflow-hidden rounded-3xl border-[1px] border-zinc-500 px-6 py-12 text-zinc-400 backdrop-blur-2xl xl:px-12 xl:py-16 {className}"
+	transition:fade={{ duration: 100 }}
 >
 	<slot />
 </div>

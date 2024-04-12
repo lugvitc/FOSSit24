@@ -84,10 +84,11 @@
 				return;
 			}
 
-			if (data) {
-				team.set(data);
-				console.log(data);
-			}
+			if (data) $team = data;
+
+			$team.points = (
+				await supabase.from('leaderboard').select('*').eq('name', $team.name).single()
+			).data.points;
 
 			const members = await supabase
 				.from('users')
@@ -95,7 +96,6 @@
 				.eq('team', $user.team)
 				.neq('id', $user.id);
 			team_members = members.data;
-			console.log(team_members);
 		}
 	});
 </script>
@@ -112,7 +112,7 @@
 					alt="user avatar"
 				/>
 				<h4 class="text-center text-foreground">{$user.name}</h4>
-				<p class="text-center uppercase">{$user.reg_no}</p>
+				<p class="text-center uppercase">{$user.reg_no.toUpperCase()}</p>
 				<a
 					class="text-center"
 					href="https://github.com/{$auth_user.user_metadata.preferred_username}/"
@@ -126,7 +126,7 @@
 						<p>Team Members</p>
 						<ul>
 							{#each team_members as member}
-								<li>{member.name} - {member.reg_no}</li>
+								<li>{member.name} - {member.reg_no.toUpperCase()}</li>
 							{/each}
 						</ul>
 						<button class="w-full" on:click={toggleContent}>

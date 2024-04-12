@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { PUBLIC_GITHUB_TOKEN } from '$env/static/public';
-	import { onMount } from 'svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 
 	const styles = `
@@ -81,7 +79,7 @@
         font-size: 18px;
         letter-spacing: -1px;
         font-style: italic;
-        @apply text-foreground
+        @apply text-foreground;
     }
 
     .readme-container blockquote * {
@@ -149,7 +147,7 @@
 
     .readme-container * {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        @apply text-background
+        @apply text-foreground;
     }
 
     .readme-container a:visited {
@@ -160,8 +158,29 @@
     .readme-container h2,
     .readme-container h3 {
         border-bottom: 1px solid #eaecef;
-        @apply text-foreground my-8
+        @apply text-foreground my-8;
     }
+
+	.readme-container h1 {
+		font-size: 3rem;
+	}
+
+	.readme-container h2 {
+		font-size: 2rem;
+	}
+
+	.readme-container pre {
+	  background-color: #1e1e2e; /* Crust */
+	  color: #cdd6f4; /* Text */
+	  padding: 1rem;
+	  border-radius: 0.5rem;
+	  font-family: monospace;
+	  overflow-x: auto;
+	}
+
+	.readme-container pre code {
+	  color: #cdd6f4; /* Text */
+	}
 
     .readme-container code>* {
         font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
@@ -175,6 +194,6 @@
 	export { className as class };
 </script>
 
-<div class="readme-container overflow-y-scroll {className}">
+<div class="readme-container {className}">
 	<SvelteMarkdown source={content + styles} />
 </div>
