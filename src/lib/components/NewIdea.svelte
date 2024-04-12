@@ -107,6 +107,7 @@
 					<Input
 						title="Github Link (optional)"
 						class="w-full"
+						type="url"
 						name="url"
 						value={idea.url || ''}
 						pattern="^https://github\.com(?:/\S*)?$"

@@ -30,7 +30,6 @@
 	}
 
 	onMount(async () => {
-		console.log(await supabase.rpc('update_leaderboard'));
 		loadTeams();
 		resize();
 	});
