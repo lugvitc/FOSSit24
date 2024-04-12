@@ -13,27 +13,21 @@
 
 		let team_id = formData.get('team_id') || null;
 
-		const { data, error } = await supabase
-			.from('users')
-			.insert([
-				{
-					id: $auth_user.id,
-					name: formData.get('name') as string,
-					reg_no: (formData.get('reg_no') as string).toLowerCase(),
-					team: team_id
-				}
-			])
-			.select();
+		const { data, error } = await supabase.from('users').insert([
+			{
+				id: $auth_user.id,
+				name: formData.get('name') as string,
+				reg_no: (formData.get('reg_no') as string).toLowerCase(),
+				team: team_id
+			}
+		]);
 
 		if (create) {
-			const { data, error } = await supabase
-				.from('teams')
-				.insert([
-					{
-						name: formData.get('team_name') as string
-					}
-				])
-				.select();
+			const { data, error } = await supabase.from('teams').insert([
+				{
+					name: formData.get('team_name') as string
+				}
+			]);
 
 			if (error) return console.error(error);
 

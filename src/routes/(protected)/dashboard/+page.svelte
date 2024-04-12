@@ -45,7 +45,10 @@
 	}
 
 	async function leaveTeam() {
-		const { data, error } = await supabase.from('users').update({ team: null }).eq('id', $user.id);
+		const { error } = await supabase
+			.from('users')
+			.update({ id: $user.id, team: null })
+			.eq('id', $user.id);
 		if (error) {
 			console.log('Error abandoning friends:', error);
 		}
