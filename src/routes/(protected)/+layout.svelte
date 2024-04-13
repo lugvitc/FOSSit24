@@ -19,7 +19,7 @@
 			user.subscribe(() => {
 				if (i) return i--; // prevent initial store set
 				// Very very bad practice:
-				if ($user.needsjointeam && location.pathname != '/dashboard')
+				if ($user.needsjointeam && location.pathname != `${base}/dashboard`)
 					location.replace(`${base}/dashboard`);
 				loading = false;
 			});
