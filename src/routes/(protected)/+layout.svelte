@@ -36,14 +36,12 @@
 	}
 </script>
 
+<img
+	src="{base}/assets/Asset 1.png"
+	class="gradient fixed left-1/2 top-1/2 -z-10 h-1/2 -translate-y-1/3 translate-x-[-50%] lg:h-screen"
+	alt="Gradient"
+/>
 <Loading {loading}>
-	<div class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden">
-		<img
-			src="{base}/assets/Asset 1.png"
-			class="gradient absolute left-[calc(50%-550px)] top-52 -z-10 m-auto h-[1024px] w-[1024px] rotate-[128deg] overflow-hidden"
-			alt="Gradient"
-		/>
-	</div>
 	{#if !$auth_user.id}
 		<Section>
 			<div class="m-auto max-w-xl space-y-8">

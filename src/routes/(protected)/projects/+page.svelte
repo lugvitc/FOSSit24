@@ -45,8 +45,10 @@
 			projects = data;
 			for (let project of projects) {
 				project.issues.reverse();
-				project.difficulty =
-					project.difficulty.slice(0, 1).toUpperCase() + project.difficulty.slice(1);
+				if (project.difficulty) {
+					project.difficulty =
+						project.difficulty.slice(0, 1).toUpperCase() + project.difficulty.slice(1);
+				}
 			}
 		}
 	});
@@ -57,22 +59,15 @@
 	async function save(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 		let url = formData.get('url') as string;
-		const urlPattern: RegExp = /^https:\/\/github\.com\/([^/]+)\/([^/]+)$/;
-		const match: RegExpMatchArray | null = url.match(urlPattern);
+		const { data, error } = await supabase.from('project_submissions').insert([
+			{
+				url: url,
+				team: $user.team as string
+			}
+		]);
 
-		if (match) {
-			const { data, error } = await supabase.from('project_submissions').insert([
-				{
-					url: url,
-					team: $user.team as string
-				}
-			]);
-
-			if (error) console.log('Error Saving Submission:', error.message);
-			if (!error) add = false;
-		} else {
-			console.log('URL does not match the pattern.');
-		}
+		if (error) console.log('Error Saving Submission:', error.message);
+		if (!error) add = false;
 	}
 
 	function toggle(e: Event) {
@@ -89,6 +84,7 @@
 				class="absolute right-4 top-4 h-16 w-16 border-0 p-4 text-3xl text-zinc-400 hover:bg-negative hover:text-foreground"
 				on:click={() => {
 					$: view = false;
+					$: viewReadme = true;
 				}}>X</button
 			>
 			<div class="mb-8 flex flex-col py-4">
@@ -118,7 +114,7 @@
 			{:else}
 				<div class="space-y-8">
 					{#each projects[focused].issues as issue}
-						<div class="flex w-full justify-between">
+						<div class="flex w-full flex-col justify-between space-y-4 md:flex-row md:space-y-0">
 							<a href={issue.url}><h3 class="m-0 text-foreground">{issue.title}</h3></a>
 							<div class="flex space-x-4">
 								{#each issue.labels as label}
@@ -165,16 +161,16 @@
 			</Glass>
 		{/each}
 	</div>
-	<div class="fixed bottom-0 right-0 z-10 p-5">
-		<button
-			data-primary
-			class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background"
-			on:click={() => {
-				add = true;
-			}}
-			>+
-		</button>
-	</div>
+	<!-- <div class="fixed bottom-0 right-0 z-10 p-5"> -->
+	<!-- 	<button -->
+	<!-- 		data-primary -->
+	<!-- 		class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background" -->
+	<!-- 		on:click={() => { -->
+	<!-- 			add = true; -->
+	<!-- 		}} -->
+	<!-- 		>+ -->
+	<!-- 	</button> -->
+	<!-- </div> -->
 </Section>
 
 {#if add}
@@ -198,7 +194,7 @@
 						class="w-full"
 						type="url"
 						name="url"
-						pattern="^https://github\.com(?:/\S*)?$"
+						pattern="^https:\/\/github\.com\/([^\/]+)\/([^\/]+)$"
 						placeholder="https://github.com/<userame>/<repository>"
 					/>
 					<input
