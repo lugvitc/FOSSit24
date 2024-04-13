@@ -110,7 +110,7 @@
 						type="url"
 						name="url"
 						value={idea.url || ''}
-						pattern="^https://github\.com(?:/\S*)?$"
+						pattern="^(?:https:\/\/github\.com\/[^\/]+\/[^\/]+)?$"
 						placeholder="https://github.com/<userame>/<repository>"
 					/>
 					<input

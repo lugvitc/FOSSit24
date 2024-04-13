@@ -57,22 +57,15 @@
 	async function save(e: SubmitEvent) {
 		const formData = new FormData(e.target as HTMLFormElement);
 		let url = formData.get('url') as string;
-		const urlPattern: RegExp = /^https:\/\/github\.com\/([^/]+)\/([^/]+)$/;
-		const match: RegExpMatchArray | null = url.match(urlPattern);
+		const { data, error } = await supabase.from('project_submissions').insert([
+			{
+				url: url,
+				team: $user.team as string
+			}
+		]);
 
-		if (match) {
-			const { data, error } = await supabase.from('project_submissions').insert([
-				{
-					url: url,
-					team: $user.team as string
-				}
-			]);
-
-			if (error) console.log('Error Saving Submission:', error.message);
-			if (!error) add = false;
-		} else {
-			console.log('URL does not match the pattern.');
-		}
+		if (error) console.log('Error Saving Submission:', error.message);
+		if (!error) add = false;
 	}
 
 	function toggle(e: Event) {
@@ -198,7 +191,7 @@
 						class="w-full"
 						type="url"
 						name="url"
-						pattern="^https://github\.com(?:/\S*)?$"
+						pattern="^https:\/\/github\.com\/([^/]+)\/([^/]+)$"
 						placeholder="https://github.com/<userame>/<repository>"
 					/>
 					<input
