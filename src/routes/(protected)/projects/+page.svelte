@@ -84,6 +84,7 @@
 				class="absolute right-4 top-4 h-16 w-16 border-0 p-4 text-3xl text-zinc-400 hover:bg-negative hover:text-foreground"
 				on:click={() => {
 					$: view = false;
+					$: viewReadme = true;
 				}}>X</button
 			>
 			<div class="mb-8 flex flex-col py-4">
@@ -113,7 +114,7 @@
 			{:else}
 				<div class="space-y-8">
 					{#each projects[focused].issues as issue}
-						<div class="flex w-full justify-between">
+						<div class="flex w-full flex-col justify-between space-y-4 md:flex-row md:space-y-0">
 							<a href={issue.url}><h3 class="m-0 text-foreground">{issue.title}</h3></a>
 							<div class="flex space-x-4">
 								{#each issue.labels as label}

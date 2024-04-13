@@ -54,7 +54,7 @@
 		<div
 			class="absolute bottom-0 right-0 hidden h-3/4 w-1/2 overflow-hidden rounded-tl-3xl bg-white xl:block"
 		>
-			<img src="{base}/hero_image.png" />
+			<img src="{base}/hero_image.png" alt="hero" />
 		</div>
 
 		<div class="w-full max-w-2xl xl:mb-24 xl:w-1/2">
