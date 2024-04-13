@@ -25,7 +25,7 @@
 			await supabase.from('ideas').select('team').eq('team', $user.team).maybeSingle()
 		).data;
 		if (error) {
-			console.log('Error retrieving data', error);
+			console.log('Error retrieving data:', error);
 		}
 	});
 </script>

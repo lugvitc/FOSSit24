@@ -16,7 +16,7 @@
 	async function loadTeams() {
 		// loading = true;
 		const { data, error } = await supabase.from('leaderboard').select('name, points');
-		if (error) console.log(error);
+		if (error) console.log('Error Fetching Teams:', error.message);
 		if (data.length) leaderboard = data;
 		loading = false;
 	}
@@ -24,7 +24,7 @@
 	async function loadIdeas() {
 		loading = true;
 		const { data, error } = await supabase.from('ideas').select('title, votes, url');
-		if (error) console.log(error);
+		if (error) console.log('Error Fetching Ideas:', error.message);
 		if (data.length) leaderboard = data;
 		loading = false;
 	}

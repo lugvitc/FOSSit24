@@ -45,7 +45,7 @@
 				.select();
 
 			if (error) {
-				console.log('Error casting vote:', error);
+				console.log('Error Casting Vote:', error.message);
 			} else {
 				voted = !voted;
 			}

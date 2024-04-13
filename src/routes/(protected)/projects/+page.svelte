@@ -1,10 +1,12 @@
 <script lang="ts">
-	import Section from '$lib/components/Section.svelte';
 	import { onMount } from 'svelte';
 	import supabase from '$lib/supabase';
+	import { user } from '$lib/stores';
+	import Section from '$lib/components/Section.svelte';
 	import Glass from '$lib/components/Glass.svelte';
 	import Tag from '$lib/components/Tag.svelte';
 	import Markdown from '$lib/components/Markdown.svelte';
+	import Input from '$lib/components/Input.svelte';
 
 	interface Label {
 		name: string;
@@ -31,10 +33,12 @@
 	}
 
 	let projects: Project[] = [];
+	let add: boolean = false;
+
 	onMount(async () => {
 		const { data, error } = await supabase.from('projects').select('*');
 		if (error) {
-			console.log('Error retrieving projects', error.message);
+			console.log('Error Retrieving Projects:', error.message);
 			return;
 		}
 		if (data) {
@@ -50,6 +54,27 @@
 	let focused = 0;
 	let viewReadme: boolean = true;
 
+	async function save(e: SubmitEvent) {
+		const formData = new FormData(e.target as HTMLFormElement);
+		let url = formData.get('url') as string;
+		const urlPattern: RegExp = /^https:\/\/github\.com\/([^/]+)\/([^/]+)$/;
+		const match: RegExpMatchArray | null = url.match(urlPattern);
+
+		if (match) {
+			const { data, error } = await supabase.from('project_submissions').insert([
+				{
+					url: url,
+					team: $user.team as string
+				}
+			]);
+
+			if (error) console.log('Error Saving Submission:', error.message);
+			if (!error) add = false;
+		} else {
+			console.log('URL does not match the pattern.');
+		}
+	}
+
 	function toggle(e: Event) {
 		viewReadme = e.target.getAttribute('data-create') == 'false';
 	}
@@ -57,11 +82,11 @@
 
 {#if view}
 	<Glass
-		class="!fixed left-0 top-0 z-10 flex h-screen w-screen flex-col justify-between overflow-y-scroll rounded-[0] border-[0] {view}"
+		class="!fixed left-0 top-0 z-10 flex h-screen w-screen flex-col justify-between overflow-y-scroll rounded-[0] border-[0]"
 	>
 		<div class="m-auto w-full max-w-3xl">
 			<button
-				class="absolute right-4 top-4 border-0 p-4 text-3xl text-zinc-400 hover:bg-negative hover:text-foreground"
+				class="absolute right-4 top-4 h-16 w-16 border-0 p-4 text-3xl text-zinc-400 hover:bg-negative hover:text-foreground"
 				on:click={() => {
 					$: view = false;
 				}}>X</button
@@ -140,4 +165,49 @@
 			</Glass>
 		{/each}
 	</div>
+	<div class="fixed bottom-0 right-0 z-10 p-5">
+		<button
+			data-primary
+			class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background"
+			on:click={() => {
+				add = true;
+			}}
+			>+
+		</button>
+	</div>
 </Section>
+
+{#if add}
+	<Glass
+		class="!fixed left-0 top-0 z-10 flex h-screen w-screen flex-col justify-center overflow-y-scroll rounded-[0] border-[0] align-middle"
+	>
+		<div class="m-auto w-full max-w-3xl">
+			<button
+				class="absolute right-4 top-4 h-16 w-16 border-0 p-4 text-3xl text-zinc-400 hover:bg-negative hover:text-foreground"
+				on:click={() => {
+					$: add = false;
+				}}>X</button
+			>
+		</div>
+		<Glass class="m-auto max-w-3xl -translate-y-1/3">
+			<form class="flex flex-col justify-center" on:submit|preventDefault={save}>
+				<h3 class="mb-10 text-center font-bold text-foreground">Add Project</h3>
+				<div class="flex flex-col space-y-8">
+					<Input
+						title="Github Link"
+						class="w-full"
+						type="url"
+						name="url"
+						pattern="^https://github\.com(?:/\S*)?$"
+						placeholder="https://github.com/<userame>/<repository>"
+					/>
+					<input
+						type="submit"
+						class="cursor-pointer rounded-2xl border-[1px] border-foreground bg-foreground px-12 py-3 text-center text-background"
+						value="Submit Project"
+					/>
+				</div>
+			</form>
+		</Glass>
+	</Glass>
+{/if}
