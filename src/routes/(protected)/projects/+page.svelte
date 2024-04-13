@@ -161,16 +161,16 @@
 			</Glass>
 		{/each}
 	</div>
-	<div class="fixed bottom-0 right-0 z-10 p-5">
-		<button
-			data-primary
-			class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background"
-			on:click={() => {
-				add = true;
-			}}
-			>+
-		</button>
-	</div>
+	<!-- <div class="fixed bottom-0 right-0 z-10 p-5"> -->
+	<!-- 	<button -->
+	<!-- 		data-primary -->
+	<!-- 		class="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-foreground text-3xl text-background" -->
+	<!-- 		on:click={() => { -->
+	<!-- 			add = true; -->
+	<!-- 		}} -->
+	<!-- 		>+ -->
+	<!-- 	</button> -->
+	<!-- </div> -->
 </Section>
 
 {#if add}
