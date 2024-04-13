@@ -39,7 +39,11 @@
 		}
 		if (data) {
 			projects = data;
-			for (let project of projects) project.issues.reverse();
+			for (let project of projects) {
+				project.issues.reverse();
+				project.difficulty =
+					project.difficulty.slice(0, 1).toUpperCase() + project.difficulty.slice(1);
+			}
 		}
 	});
 	let view = false;
@@ -90,12 +94,12 @@
 				<div class="space-y-8">
 					{#each projects[focused].issues as issue}
 						<div class="flex w-full justify-between">
-							<a href={issue.url}
-								><h3 class="m-0 text-foreground">{issue.title} #{issue.number}</h3></a
-							>
+							<a href={issue.url}><h3 class="m-0 text-foreground">{issue.title}</h3></a>
 							<div class="flex space-x-4">
 								{#each issue.labels as label}
-									<Tag class="h-fit">{label.name}</Tag>
+									<Tag class="h-fit"
+										>{label.name.slice(0, 1).toUpperCase() + label.name.slice(1)}</Tag
+									>
 								{/each}
 							</div>
 						</div>
@@ -122,7 +126,7 @@
 					</h3>
 					<div class="flex flex-[1] flex-col items-end space-y-2">
 						<Tag>{project.language}</Tag>
-						<Tag>{project.difficulty}</Tag>
+						<!-- <Tag>{project.difficulty}</Tag> -->
 					</div>
 				</div>
 				<p>{project.about}</p>
