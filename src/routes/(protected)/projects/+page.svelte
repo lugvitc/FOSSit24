@@ -45,8 +45,10 @@
 			projects = data;
 			for (let project of projects) {
 				project.issues.reverse();
-				project.difficulty =
-					project.difficulty.slice(0, 1).toUpperCase() + project.difficulty.slice(1);
+				if (project.difficulty) {
+					project.difficulty =
+						project.difficulty.slice(0, 1).toUpperCase() + project.difficulty.slice(1);
+				}
 			}
 		}
 	});
@@ -191,7 +193,7 @@
 						class="w-full"
 						type="url"
 						name="url"
-						pattern="^https:\/\/github\.com\/([^/]+)\/([^/]+)$"
+						pattern="^https:\/\/github\.com\/([^\/]+)\/([^\/]+)$"
 						placeholder="https://github.com/<userame>/<repository>"
 					/>
 					<input
