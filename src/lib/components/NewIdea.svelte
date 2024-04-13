@@ -27,7 +27,7 @@
 			.eq('team', $user.team)
 			.maybeSingle();
 		if (error) {
-			console.log('Error retrieving idea', error.message);
+			console.log('Error Retrieving Idea:', error.message);
 			return;
 		}
 		if (data) {
@@ -57,7 +57,7 @@
 				})
 				.eq('team', $user.team)
 				.select('*');
-			console.log(error?.message);
+			if (error) console.log('Error Updating Ideas', error.message);
 			if (!error) location.replace('/ideas');
 		} else {
 			const { data, error } = await supabase
@@ -71,7 +71,7 @@
 					}
 				])
 				.select();
-			console.log(error?.message);
+			if (error) console.log('Error Creating Ideas:', error.message);
 			if (!error) location.replace('/ideas');
 		}
 	}

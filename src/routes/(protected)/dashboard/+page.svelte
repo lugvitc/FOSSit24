@@ -35,7 +35,7 @@
 				}, 2000);
 			})
 			.catch((error) => {
-				console.error('Error copying to clipboard:', error);
+				console.log('Error copying to clipboard:', error);
 			});
 	}
 
@@ -50,7 +50,7 @@
 			.update({ id: $user.id, team: null })
 			.eq('id', $user.id);
 		if (error) {
-			console.log('Error abandoning friends:', error);
+			console.log('Error Leaving Team:', error.message);
 		}
 		if (!error) location.replace('/dashboard');
 	}
@@ -58,16 +58,13 @@
 		const formData = new FormData(e.target as HTMLFormElement);
 
 		let team_id = formData.get('team_id') || null;
-		console.log(team_id);
 
 		const { data, error } = await supabase
 			.from('users')
 			.update({ team: team_id })
 			.eq('id', $user.id)
 			.select();
-		if (error) {
-			console.log(error);
-		}
+		if (error) console.log('Error Joining Team:', error.message);
 		if (!error) location.replace('/dashboard');
 	}
 
@@ -80,7 +77,7 @@
 				.single();
 
 			if (error) {
-				console.error('Error fetching teams:', error.message);
+				console.log('Error Fetching Teams:', error.message);
 				return;
 			}
 

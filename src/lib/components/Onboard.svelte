@@ -22,7 +22,7 @@
 			}
 		]);
 
-		if (error) return console.error(error);
+		if (error) console.log('Error Joining Team:', error.message);
 
 		if (create) {
 			let team_id = crypto.randomUUID();
@@ -33,13 +33,12 @@
 				}
 			]);
 
-			if (error) return console.error(error);
+			if (error) console.log('Error Creating Team:', error.message);
 
 			await supabase.from('users').update({ team: team_id }).eq('id', $auth_user.id);
 		}
 
 		if (!error) location.replace('/dashboard');
-		else console.log(error);
 	}
 
 	function toggle(e: Event) {

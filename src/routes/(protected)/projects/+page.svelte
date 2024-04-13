@@ -38,7 +38,7 @@
 	onMount(async () => {
 		const { data, error } = await supabase.from('projects').select('*');
 		if (error) {
-			console.log('Error retrieving projects', error.message);
+			console.log('Error Retrieving Projects:', error.message);
 			return;
 		}
 		if (data) {
@@ -68,7 +68,7 @@
 				}
 			]);
 
-			console.log(error?.message);
+			if (error) console.log('Error Saving Submission:', error.message);
 			if (!error) add = false;
 		} else {
 			console.log('URL does not match the pattern.');

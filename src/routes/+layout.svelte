@@ -13,7 +13,7 @@
 		const error = event.error;
 		errorMessage = error ? error.message : 'Unknown Error: Find it and Fix it!';
 		showError = true;
-		console.log('Error detected');
+		console.log(errorMessage);
 	}
 
 	onMount(() => {
