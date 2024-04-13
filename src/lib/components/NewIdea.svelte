@@ -37,7 +37,7 @@
 	});
 
 	async function deleteIdea() {
-		const { data, error } = await supabase.from('ideas').delete().eq('team', $user.team);
+		const { data, error } = await supabase.from('ideas').delete().eq('team', $user.team).select();
 		if (error) {
 			console.log('Error retrieving idea', error.message);
 		}
