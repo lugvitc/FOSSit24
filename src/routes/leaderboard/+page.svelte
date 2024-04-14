@@ -14,20 +14,24 @@
 	let loading = true;
 
 	async function loadTeams() {
-		// loading = true;
-		const { data, error } = await supabase.from('leaderboard').select('name, points');
-		if (error) console.log('Error Fetching Teams:', error.message);
-		if (data.length) leaderboard = data;
-		loading = false;
-	}
-
+    loading = true;
+    const { data, error } = await supabase.from('leaderboard').select('name, points');
+    if (error) console.log('Error Fetching Teams:', error.message);
+    if (data.length) {
+        leaderboard = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort by team names
+    }
+    loading = false;
+}
 	async function loadIdeas() {
-		loading = true;
-		const { data, error } = await supabase.from('ideas').select('title, votes, url');
-		if (error) console.log('Error Fetching Ideas:', error.message);
-		if (data.length) leaderboard = data;
-		loading = false;
-	}
+    loading = true;
+    const { data, error } = await supabase.from('ideas').select('title, votes, url');
+    if (error) console.log('Error Fetching Ideas:', error.message);
+    if (data.length) {
+        leaderboard = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort by idea titles
+    }
+    loading = false;
+}
+
 
 	onMount(async () => {
 		loadTeams();
