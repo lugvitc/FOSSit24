@@ -26,7 +26,10 @@
 
 	async function loadIdeas() {
 		loading = true;
-		const { data, error } = await supabase.from('ideas').select('title, votes, url');
+		const { data, error } = await supabase
+			.from('ideas')
+			.select('title, votes, url')
+			.order('votes', { ascending: false });
 		if (error) console.log('Error Fetching Ideas:', error.message);
 		if (data.length) leaderboard = data;
 		loading = false;
@@ -81,7 +84,7 @@
 						<div
 							class="flex h-full w-full flex-row-reverse items-center justify-between space-x-4 text-center text-foreground md:flex-col md:space-x-0 md:space-y-4"
 						>
-							<h4>{leaderboard[i].name}</h4>
+							<h4>{teams ? leaderboard[i].name : leaderboard[i].title}</h4>
 							<div
 								class="podium flex aspect-square h-full max-h-32 flex-col justify-center rounded-[35px] max-md:before:!m-0 md:w-full md:max-w-32"
 								id="podium{i + 1 + ''}"
