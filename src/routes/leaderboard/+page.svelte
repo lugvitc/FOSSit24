@@ -25,7 +25,9 @@
 		loading = true;
 		const { data, error } = await supabase.from('ideas').select('title, votes, url');
 		if (error) console.log('Error Fetching Ideas:', error.message);
-		if (data.length) leaderboard = data;
+		if (data.length) {
+			leaderboard = data.sort((a, b) => b.points - a.points); // Sort leaderboard by points
+		}
 		loading = false;
 	}
 
