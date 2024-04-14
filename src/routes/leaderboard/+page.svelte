@@ -18,7 +18,14 @@
     const { data, error } = await supabase.from('leaderboard').select('name, points');
     if (error) console.log('Error Fetching Teams:', error.message);
     if (data.length) {
-        leaderboard = data.sort((a, b) => a.name.localeCompare(b.name)); // Sort by team names
+        // Sort the data by points and then by name if points are equal
+        leaderboard = data.sort((a, b) => {
+            if (a.points !== b.points) {
+                return b.points - a.points; // Sort by points in descending order
+            } else {
+                return a.name.localeCompare(b.name); // If points are equal, sort by name in ascending order
+            }
+        });
     }
     loading = false;
 }
