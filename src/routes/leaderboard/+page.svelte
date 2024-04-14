@@ -17,7 +17,9 @@
 		// loading = true;
 		const { data, error } = await supabase.from('leaderboard').select('name, points');
 		if (error) console.log('Error Fetching Teams:', error.message);
-		if (data.length) leaderboard = data;
+		if (data.length) {
+			leaderboard = data.sort((a, b) => b.points - a.points); // Sort leaderboard by points
+		}
 		loading = false;
 	}
 
