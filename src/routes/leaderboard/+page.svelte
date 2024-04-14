@@ -14,20 +14,31 @@
 	let loading = true;
 
 	async function loadTeams() {
-		// loading = true;
-		const { data, error } = await supabase.from('leaderboard').select('name, points');
-		if (error) console.log('Error Fetching Teams:', error.message);
-		if (data.length) leaderboard = data;
-		loading = false;
-	}
-
+    loading = true;
+    const { data, error } = await supabase.from('leaderboard').select('name, points');
+    if (error) console.log('Error Fetching Teams:', error.message);
+    if (data.length) {
+        // Sort the data by points and then by name if points are equal
+        leaderboard = data.sort((a, b) => {
+            if (a.points !== b.points) {
+                return b.points - a.points; // Sort by points in descending order
+            } else {
+                return a.name.localeCompare(b.name); // If points are equal, sort by name in ascending order
+            }
+        });
+    }
+    loading = false;
+}
 	async function loadIdeas() {
-		loading = true;
-		const { data, error } = await supabase.from('ideas').select('title, votes, url');
-		if (error) console.log('Error Fetching Ideas:', error.message);
-		if (data.length) leaderboard = data;
-		loading = false;
-	}
+    loading = true;
+    const { data, error } = await supabase.from('ideas').select('title, votes, url');
+    if (error) console.log('Error Fetching Ideas:', error.message);
+    if (data.length) {
+        leaderboard = data.sort((a, b) => a.title.localeCompare(b.title)); // Sort by idea titles
+    }
+    loading = false;
+}
+
 
 	onMount(async () => {
 		loadTeams();
