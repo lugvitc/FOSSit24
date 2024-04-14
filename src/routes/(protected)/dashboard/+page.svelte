@@ -134,9 +134,9 @@
 							class="bottom-12 right-12 flex flex-col space-y-4 md:absolute md:flex-row md:space-x-4 md:space-y-0"
 						>
 							<button on:click={logout}>Logout</button>
-							<button class="border-0 bg-negative text-background" on:click={leaveTeam}
-								>Leave Team</button
-							>
+							<!-- <button class="border-0 bg-negative text-background" on:click={leaveTeam} -->
+							<!-- 	>Leave Team</button -->
+							<!-- > -->
 						</div>
 					{:else}
 						<form
